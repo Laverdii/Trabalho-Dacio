@@ -45,4 +45,44 @@ Apresenta-se a seguir o fluxo completo de navegação e as etapas de interação
 
 ## 4. Estrutura de Dados
 
-**Exemplo:**
+O sistema utilizará estruturas heterogêneas (`struct`) para organizar as principais informações utilizadas durante a investigação. As estruturas previstas são:
+
+```c
+// Estrutura para armazenamento dos casos
+typedef struct {
+    char titulo[80];
+    char historia[500];
+    int culpado;
+    char resolucao[500];
+} Caso;
+
+// Estrutura para armazenamento dos personagens
+typedef struct {
+    char nome[40];
+    char papel[40];
+    char fala[500];
+    int suspeito;
+} Personagem;
+
+// Estrutura para armazenamento das pistas
+typedef struct {
+    char descricao[500];
+    char item[60];
+    int encontrada;
+} Pista;
+
+// Estrutura para armazenamento dos cômodos
+typedef struct {
+    char nome[40];
+    char descricao[200];
+    Pista pistas[3];
+    int explorado;
+} Comodo;
+
+// Estrutura para controle da investigação
+typedef struct {
+    Caso caso;
+    int dificuldade;
+    int turnos_restantes;
+    int caso_resolvido;
+} Investigacao;
