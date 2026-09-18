@@ -4,8 +4,7 @@
 
 O projeto consiste em um sistema de jogo de investigação desenvolvido em linguagem C. O sistema permitirá que o jogador escolha entre diferentes casos, cada um com um nível de dificuldade e uma quantidade específica de turnos para solucionar o mistério. Durante a investigação, o jogador poderá explorar cômodos, conversar com suspeitos, coletar pistas e consultar o inventário para reunir informações que auxiliem na descoberta do culpado.
 
-O foco principal é proporcionar uma experiência de investigação baseada na tomada de decisões e no gerenciamento de turnos, permitindo que o jogador analise as pistas disponíveis e escolha as melhores ações para solucionar cada caso. Ao final da investigação, o jogador deverá realizar uma acusação e, caso identifique corretamente o culpado, vencerá o jogo. Caso contrário, ou se os turnos forem esgotados sem uma acusação correta, a partida será encerrada com derrota.
-
+O foco principal é proporcionar uma experiência de investigação baseada na tomada de decisões e no gerenciamento de turnos. Ao longo da partida, o jogador deverá analisar as informações obtidas, definir suas ações e administrar os recursos disponíveis para avançar na investigação. O sistema acompanhará o progresso da partida e, ao final, avaliará a decisão do jogador, determinando o desfecho do caso. Entradas inválidas serão tratadas de forma adequada, mantendo a continuidade e a organização da navegação entre as etapas do jogo.
 
 ---
 
