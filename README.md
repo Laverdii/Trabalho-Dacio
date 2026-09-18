@@ -52,6 +52,7 @@ Apresenta-se a seguir o fluxo completo de navegação e as etapas de interação
 
 
 
+
 ## 4. Estrutura de Dados
 
 **Exemplo:**
