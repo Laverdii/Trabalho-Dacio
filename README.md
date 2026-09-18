@@ -1,4 +1,4 @@
-# Título do Projeto: Detetive
+# Título do Projeto: Jogo de Detetive
 
 ## 1. Descrição do Sistema
 
