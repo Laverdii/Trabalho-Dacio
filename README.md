@@ -42,7 +42,7 @@ Apresenta-se a seguir o fluxo completo de navegação e as etapas de interação
 ## 3. Fluxograma da Lógica do Sistema
 
 <p align="center">
-  <img src="Trabalho-Dacio/docs/fluxograma_jogo_investigacao.drawio.svg" width="100%">
+  <img src="docs/fluxograma_jogo_investigacao.drawio.svg" width="100%">
 </p>
 
 
