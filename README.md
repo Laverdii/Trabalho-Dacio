@@ -41,6 +41,8 @@ Apresenta-se a seguir o fluxo completo de navegação e as etapas de interação
 ## 3. Fluxograma da Lógica do Sistema
 ![Imagem do Fluxograma Lógico](docs/fluxograma_jogo_investigacao.drawio.svg)
 
+---
+
 ## 4. Estrutura de Dados
 
 **Exemplo:**
