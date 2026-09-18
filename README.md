@@ -40,8 +40,8 @@ Apresenta-se a seguir o fluxo completo de navegação e as etapas de interação
 ---
 
 ## 3. Fluxograma da Lógica do Sistema
+<img width="2352" height="1992" alt="image" src="https://github.com/user-attachments/assets/1dd12bcc-28ff-4be9-b1be-6b8192785387" />
 
----
 
 ## 4. Estrutura de Dados
 
