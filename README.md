@@ -39,7 +39,9 @@ Apresenta-se a seguir o fluxo completo de navegação e as etapas de interação
 ---
 
 ## 3. Fluxograma da Lógica do Sistema
-<img width="2052" height="1853" alt="image" src="https://github.com/user-attachments/assets/41d160d8-c506-475f-9a5f-a36558cbca47" />
+<p align="center">
+  <img src="./docs/fluxograma_jogo_investigacao.drawio.svg" alt="Fluxograma do Projeto">
+</p>
 
 ---
 
