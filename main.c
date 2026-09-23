@@ -150,7 +150,42 @@ void iniciar_jogo(){
 
 // void investigar(){}
 
-// void acusacao(){}
+void acusacao (){
+    int suspeito;
+
+    printf("\n========================================\n");
+    printf("              ACUSACAO\n");
+    printf("========================================\n");
+
+    printf("\nQuem voce acredita ser o responsavel?");
+    printf("\n\n1. Carlos Oliveira");
+    printf("\n2. Mariana Oliveira");
+    printf("\n3. Ricardo Mendes");
+    printf("\n4. Ana Souza\n");
+    scanf("%d", &suspeito);
+    
+    switch (suspeito){
+        case 1:
+            printf("\nVoce acusou Carlos Oliveira.");
+            printf("\n.....");
+            break;
+        case 2:
+            printf("\nVoce acusou Mariana Oliveira.");
+            printf("\n.....");
+            break;
+        case 3:
+            printf("\nVoce acusou Ricardo Mendes.");
+            printf("\n.....");
+            break;
+        case 4:
+            printf("\nVoce acusou Ana Souza.");
+            printf("\n.....");
+            break;
+        default:
+            printf("\nSuspeito invalido!");
+            break;
+    }
+}
 
 // void sair(){}
 
