@@ -131,6 +131,7 @@ void iniciar_jogo(){
     printf("[2]. Interrogar um suspeito\n");
     printf("[3]. Acusar um suspeito (encerrar o caso)\n");
     printf("[4]. Sair sem resolver\n");
+    printf("Escolha uma opcao: ");
     scanf("%d", &opcao);
 
     switch (opcao){
@@ -244,7 +245,7 @@ void investigar(){
     printf("\n[3]. Quarto");
     printf("\n[4]. Escritorio (Cena do crime)");
     printf("\n[5]. Jardim");
-    printf("\n[6]. Biblioteca\n");
+    printf("\n[6]. Biblioteca");
     printf("\nEscolha uma opcao: ");
     scanf("%d", &comodo);
 
