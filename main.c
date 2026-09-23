@@ -43,6 +43,8 @@ void iniciar_jogo(){
     char nome[30];
     int opcao;
 
+    system("cls");
+
     // Tela inicial
 
     printf("Disclaimer: JOGO NAO FUNCIONAL, pois nao funciona sem laco de repeticao");
@@ -156,6 +158,8 @@ void iniciar_jogo(){
 
 void conversar(){
     int pessoa;
+
+    system("cls");
     
     printf("\n========================================\n"); 
     printf("        CONVERSAR COM O SUSPEITO\n");
@@ -209,6 +213,9 @@ void conversar(){
         printf("\nOpcao invalida!\n");
         break;
     }
+    getchar();
+    printf("\n\nPressione Enter para continuar...");
+    getchar();
 }
 
 void investigar(){
@@ -400,10 +407,15 @@ void investigar(){
             printf("\nComodo invalido!");    
             break;
     }
+    getchar();
+    printf("\n\nPressione Enter para continuar...");
+    getchar();
 }
 
 void acusacao (){
     int suspeito;
+
+    system("cls");
 
     printf("\n========================================\n");
     printf("              ACUSACAO\n");
@@ -461,6 +473,9 @@ void acusacao (){
             printf("\nSuspeito invalido!\n");
             break;
     }
+    getchar();
+    printf("\n\nPressione Enter para continuar...");
+    getchar();
 }
 
 void sair() {
