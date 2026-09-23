@@ -149,7 +149,132 @@ void iniciar_jogo(){
 
 // void conversar(){}
 
-// void investigar(){}
+void investigar(){
+    int comodo;
+
+    printf("\nPLANTA PRIMEIRO ANDAR!\n");
+    printf("+-----------------+-----------------+----------------+ \n");
+    printf("|     . . . escada|                 |   BIBLIOTECA   |-----------]\n");
+    printf("|    +------------|                 |                |           ]\n");
+    printf("|                 |  SALA DE ESTAR  |                |  JARDIM   ]\n");
+    printf("|                 |                 |                |           ]\n");
+    printf("|    COZINHA                        |                            ]\n");
+    printf("|                                                    +--<     >--]\n");
+    printf("|                                                    |\n");
+    printf("+-----------------+-----<    >------+----------------+\n");
+
+    printf("\nPLANTA SEGUNDO ANDAR!\n");
+    printf("\n+-----------------+-----------------+----------------+ \n");
+    printf("|escada . . .                                        |\n");
+    printf("|-----------------+                                  |\n");
+    printf("|                                                    |\n");
+    printf("|                                  QUARTO            |\n");
+    printf("|                                                    |\n");
+    printf("|   ESCRITORIO   +                                  |\n");
+    printf("|                 |                                  |\n");
+    printf("+-----------------+-----------------+----------------+\n");
+
+    printf("\n========================================\n"); 
+    printf("              INVESTIGACAO\n");
+    printf("========================================\n");
+    printf("\nEscolha um comodo para investigar: ");
+    printf("\n\n1. Sala de Estar");
+    printf("\n2. Cozinha");
+    printf("\n3. Quarto");
+    printf("\n4. Escritorio (Cena do crime)");
+    printf("\n5. Jardim");
+    printf("\n6. Biblioteca");
+    printf("\n\nEscolha uma opcao: ");
+    scanf("%d", &comodo);
+
+    switch (comodo){
+        case 1:
+            printf("\n+-----------------------+\n");
+            printf("|_|    _ _______ _    |_|\n");
+            printf("|   ()|_|_______|_|()   |\n");
+            printf("|    _              _   |\n");
+            printf("|   |_|            |_|  |\n");
+            printf("                        |\n");
+            printf("                         \n");
+            printf("      SALA DE ESTAR      \n");
+            printf("+--------<    >---------+\n");
+        
+            printf("\nVoce investigou a sala.");
+            printf("\nEncontrou.....");
+            break;
+        case 2:
+            printf("\n|      +-----------------|\n");
+            printf("|         |______________|\n");
+            printf("|__                      |\n");
+            printf("|  |      COZINHA        |\n");
+            printf("|__|       ______        |\n");
+            printf("| |    [] |      | []     \n");
+            printf("| |    [] |______| []     \n");
+            printf("| |                       \n");
+            printf("+------------------------+\n");
+
+            printf("\nVoce investigou a cozinha.");
+            printf("\nEncontrou.....");
+            break;
+        case 3:
+            printf("\n-------------+-----------------+ \n");
+            printf("          |____________________|\n");
+            printf("-+                             |\n");
+            printf("            QUARTO             |\n");
+            printf("           _________           |\n");
+            printf("          |         |          |\n");
+            printf(" +    __  |  _____  |  __      |\n");
+            printf(" |   |  | | |  |  | | |  |     |\n");
+            printf("-+-------------+---------------+\n");
+
+            printf("\nVoce investigou o quarto.");
+            printf("\nEncontrou.....");
+            break;
+        case 4:
+            printf("\n|-----------------+    \n");
+            printf("|__    ESCRITORIO      \n");
+            printf("|  |                   \n");
+            printf("|  |    ________       \n");
+            printf("|  |   |________|   + \n");
+            printf("|  |      [__]      | \n");
+            printf("+-------------------+-\n");
+            
+            printf("\nVoce investigou o escritorio.");
+            printf("\nEncontrou.....");
+            break;
+        case 5:
+            printf("\n|------------------]\n");
+            printf("|   JARDIM      _  ]\n");
+            printf("|              (_) ]\n");
+            printf("|     _        _|_ ]\n");
+            printf("|    (_)       \\_/ ]\n");
+            printf("     _|_           ]\n");
+            printf("     \\_/           ]\n");
+            printf("+------<     >-----]\n");
+            printf("\nVoce investigou o jardim.");
+            printf("\nEncontrou.....");
+            break;
+        case 6:    
+            printf("\n+-----------------------+\n");
+            printf("|__|_|_|_|_|_|_|_|_|_|_||\n");
+            printf("|__|                    |\n");
+            printf("|__|    BIBLIOTECA      |\n");
+            printf("|__|                    |\n");
+            printf("|__|     __     __      |\n");
+            printf("|__|    [__]   [__]      \n");
+            printf("|__|                     \n");
+            printf("          _______       +\n");
+            printf("         [_______]      |\n");
+            printf("+-----------------------+\n"); 
+            
+            printf("\nVoce investigou a biblioteca.");
+            printf("\nEncontrou....");
+            break;
+        default:
+            printf("\nComodo invalido!");    
+            break;
+    }
+}
 
 void acusacao (){
     int suspeito;
