@@ -127,10 +127,10 @@ void iniciar_jogo(){
     printf("============================================================\n");
     printf("                    MENU DO CASO                            \n");
     printf("============================================================\n\n");
-    printf("[1] Explorar os comodos da mansao\n");
-    printf("[2] Interrogar um suspeito\n");
-    printf("[3] Acusar um suspeito (encerrar o caso)\n");
-    printf("[4] Sair sem resolver\n");
+    printf("[1]. Explorar os comodos da mansao\n");
+    printf("[2]. Interrogar um suspeito\n");
+    printf("[3]. Acusar um suspeito (encerrar o caso)\n");
+    printf("[4]. Sair sem resolver\n");
     scanf("%d", &opcao);
 
     switch (opcao){
