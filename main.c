@@ -173,46 +173,46 @@ void conversar(){
     scanf("%d", &pessoa);
 
     switch (pessoa) {
-            case 1:
-                printf("\nVoce iniciou uma conversa com Carlos Oliveira.");
-                printf("Carlos parece nervoso durante o interrogatorio.\n\n");
-                printf("\nCarlos Oliverira: ");
+        case 1:
+            printf("\nVoce iniciou uma conversa com Carlos Oliveira.");
+            printf("Carlos parece nervoso durante o interrogatorio.\n\n");
+            printf("\nCarlos Oliverira: ");
 
-                printf("- Eu estava na sala assistindo televisao.\n");
-                printf("Por volta das 23h30, ouvi um barulho vindo do\nescritorio, mas nao fui verificar.\n");
-                printf("Eu e Henrique tinhamos problemas financeiros,\nmas eu jamais faria algo assim.\n");
+            printf("- Eu estava na sala assistindo televisao.\n");
+            printf("Por volta das 23h30, ouvi um barulho vindo do\nescritorio, mas nao fui verificar.\n");
+            printf("Eu e Henrique tinhamos problemas financeiros,\nmas eu jamais faria algo assim.\n");
             break;
-            case 2:
-                printf("\nVoce iniciou uma conversa com Mariana Oliveira.");
-                printf("Mariana demonstra preocupacao durante a conversa.\n\n");
-                printf("\nMariana Oliveira: ");
+        case 2:
+            printf("\nVoce iniciou uma conversa com Mariana Oliveira.");
+            printf("Mariana demonstra preocupacao durante a conversa.\n\n");
+            printf("\nMariana Oliveira: ");
 
-                printf("- Eu estava na cozinha preparando uma bebida.\n");
-                printf("Nao ouvi nenhuma discussao.\n");
-                printf("Henrique e eu tivemos problemas recentemente,\nmas eu nao queria que ele morresse.\n");
-                break;
-            case 3:
-                printf("\nVoce iniciou uma conversa com Ricardo Mendes.");    
-                printf("Ricardo tenta manter a calma durante o interrogatorio.\n\n");
-                printf("\nRicardo Mendes: ");
+            printf("- Eu estava na cozinha preparando uma bebida.\n");
+            printf("Nao ouvi nenhuma discussao.\n");
+            printf("Henrique e eu tivemos problemas recentemente,\nmas eu nao queria que ele morresse.\n");
+            break;
+        case 3:
+            printf("\nVoce iniciou uma conversa com Ricardo Mendes.");    
+            printf("Ricardo tenta manter a calma durante o interrogatorio.\n\n");
+            printf("\nRicardo Mendes: ");
 
-                printf("- Eu estava no jardim fazendo uma ligacao.\n");
-                printf("Fiquei la durante boa parte da noite.\n");            
-                printf("Nao entrei no escritorio e nao vi Henrique depois\nque ele foi para la.\n");
-                break;
-            case 4:
-                printf("\nVoce iniciou uma conversa com Ana Souza.");
-                printf("Ana parece bastante nervosa.\n\n");
-                printf("\nAna Souza: ");
+            printf("- Eu estava no jardim fazendo uma ligacao.\n");
+            printf("Fiquei la durante boa parte da noite.\n");            
+            printf("Nao entrei no escritorio e nao vi Henrique depois\nque ele foi para la.\n");
+            break;
+        case 4:
+            printf("\nVoce iniciou uma conversa com Ana Souza.");
+            printf("Ana parece bastante nervosa.\n\n");
+            printf("\nAna Souza: ");
 
-                printf("\"Eu estava organizando algumas coisas na sala.\n");
-                printf("Conheco bem a rotina da casa, mas nao vi quem\nentrou no escritorio naquela noite.\n");
-                printf("Depois ouvi uma movimentacao, mas fiquei onde estava.\"\n");
-                break;
-            default:
-                printf("\nOpcao invalida!\n");
-                break;
-        }
+            printf("\"Eu estava organizando algumas coisas na sala.\n");
+            printf("Conheco bem a rotina da casa, mas nao vi quem\nentrou no escritorio naquela noite.\n");
+            printf("Depois ouvi uma movimentacao, mas fiquei onde estava.\"\n");
+            break;
+        default:
+            printf("\nOpcao invalida!\n");
+            break;
+    }
     getchar();
     printf("\n\nPressione Enter para continuar...");
     getchar();
