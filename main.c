@@ -40,3 +40,16 @@ void menu_principal(){
 }
 
 // void iniciar_jogo(){}
+
+// void conversar(){}
+
+// void investigar(){}
+
+// void acusacao(){}
+
+// void sair(){}
+
+int main() {
+    menu_principal();
+    return 0;
+}
