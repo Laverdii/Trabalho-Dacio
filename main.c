@@ -262,7 +262,10 @@ void investigar(){
             printf("+--------<    >---------+\n");
         
             printf("\nVoce investigou a sala.");
-            printf("\nEncontrou.....");
+            printf("\nITEM ENCONTRADO: RELOGIO DE PULSO\n");
+            printf("O relogio esta quebrado e pertence a Henrique Oliveira.\n");
+            printf("Os ponteiros estao parados exatamente em 23h32.\n");
+            
             break;
         case 2:
             printf("\n|      +-----------------|\n");
@@ -276,7 +279,10 @@ void investigar(){
             printf("+------------------------+\n");
 
             printf("\nVoce investigou a cozinha.");
-            printf("\nEncontrou.....");
+            printf("\nITEM ENCONTRADO: TACA QUEBRADA\n");
+            printf("A taca possui uma pequena mancha de sangue.\n");
+
+            printf("\nA taca estava sendo usada por Mariana naquela noite.\n");
             break;
         case 3:
             printf("\n-------------+-----------------+ \n");
@@ -289,8 +295,22 @@ void investigar(){
             printf(" |   |  | | |  |  | | |  |     |\n");
             printf("-+-------------+---------------+\n");
 
-            printf("\nVoce investigou o quarto.");
-            printf("\nEncontrou.....");
+            printf("\nVoce investigou o quarto principal.\n");
+
+            printf("\nITEM ENCONTRADO: DOCUMENTO FINANCEIRO\n");
+
+            printf("O documento mostra varias transferencias realizadas\n");
+            printf("pela empresa de Henrique.\n");
+
+            printf("\nAlgumas movimentacoes chamam sua atencao.\n");
+
+            printf("O nome de Ricardo Mendes aparece relacionado\n");
+            printf("a algumas dessas transacoes.\n");
+
+            printf("\nPISTA:\n");
+            printf("Henrique aparentemente estava investigando\n");
+            printf("alguma irregularidade financeira.\n");
+            
             break;
         case 4:
             printf("\n|-----------------+    \n");
@@ -302,7 +322,23 @@ void investigar(){
             printf("+-------------------+-\n");
             
             printf("\nVoce investigou o escritorio.");
-            printf("\nEncontrou.....");
+            printf("\nITEM ENCONTRADO: BOTAO DE CAMISA\n");
+
+            printf("Um pequeno botao foi encontrado proximo a mesa.\n");
+
+            printf("O botao parece ter sido arrancado durante uma luta.\n");
+
+            printf("\nAo observar os suspeitos, voce percebe que\n");
+            printf("Ricardo possui uma camisa com um botao faltando.\n");
+
+            printf("\nITEM ENCONTRADO: DOCUMENTO RASGADO\n");
+
+            printf("Parte do documento apresenta informacoes sobre\n");
+            printf("transferencias financeiras suspeitas.\n");
+
+            printf("\nPISTA:\n");
+            printf("Henrique provavelmente confrontou alguem\n");
+            printf("sobre essas movimentacoes antes de morrer.\n");
             break;
         case 5:
             printf("\n|------------------]\n");
@@ -314,7 +350,24 @@ void investigar(){
             printf("     \\_/           ]\n");
             printf("+------<     >-----]\n");
             printf("\nVoce investigou o jardim.");
-            printf("\nEncontrou.....");
+            printf("\nITEM ENCONTRADO: CELULAR\n");
+
+            printf("O celular foi encontrado proximo ao banco do jardim.\n");
+
+            printf("O aparelho possui um registro de chamada.\n");
+
+            printf("\nA chamada comecou as 23h36.\n");
+
+            printf("Ricardo afirmou que estava no jardim fazendo\n");
+            printf("uma ligacao durante boa parte da noite.\n");
+
+            printf("\nPISTA:\n");
+            printf("O relogio encontrado na sala indica 23h32 como\n");
+            printf("o horario aproximado do ataque.\n");
+
+            printf("A ligacao de Ricardo comecou somente as 23h36.\n");
+
+            printf("\nExiste uma contradicao no depoimento.\n");
             break;
         case 6:    
             printf("\n+-----------------------+\n");
@@ -330,7 +383,18 @@ void investigar(){
             printf("+-----------------------+\n"); 
             
             printf("\nVoce investigou a biblioteca.");
-            printf("\nEncontrou....");
+            printf("\nITEM ENCONTRADO: ANOTACAO DE HENRIQUE\n");
+
+            printf("Entre varios documentos, voce encontra uma\n");
+            printf("anotacao escrita pela propria vitima.\n");
+
+            printf("\nA anotacao diz:\n");
+            printf("\"Investigar novamente as transferencias realizadas por R.M.\"\n");
+
+            printf("\nPISTA:\n");
+            printf("As iniciais R.M. correspondem a Ricardo Mendes.\n");
+
+            printf("Henrique estava investigando Ricardo antes de morrer.\n");
             break;
         default:
             printf("\nComodo invalido!");    
