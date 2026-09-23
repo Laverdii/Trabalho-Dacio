@@ -414,28 +414,51 @@ void acusacao (){
     printf("\n[2]. Mariana Oliveira");
     printf("\n[3]. Ricardo Mendes");
     printf("\n[4]. Ana Souza");
-    print("\nEscolha uma opcao: ");
+    printf("\nEscolha uma opcao: ");
     scanf("%d", &suspeito);
     
     switch (suspeito){
         case 1:
             printf("\nVoce acusou Carlos Oliveira.");
-            printf("\n.....");
+
+            printf("\nA acusacao nao foi suficiente.\n");
+            printf("Carlos tinha motivos para discutir com Henrique,\n");
+            printf("mas as pistas encontradas nao o colocam na cena do crime.\n");
+
+            printf("\nCASO NAO RESOLVIDO.\n");
             break;
         case 2:
             printf("\nVoce acusou Mariana Oliveira.");
-            printf("\n.....");
+            printf("\nA taca encontrada na cozinha parecia incrimina-la,\n");
+            printf("mas a evidencia nao prova que Mariana matou Henrique.\n");
+
+            printf("\nCASO NAO RESOLVIDO.\n");
             break;
         case 3:
             printf("\nVoce acusou Ricardo Mendes.");
-            printf("\n.....");
+            
+            printf("\nAs pistas comecam a formar uma sequencia.\n\n");
+
+            printf("[1] O relogio de Henrique parou as 23h32.\n");
+            printf("[2] Henrique estava investigando movimentacoes financeiras.\n");
+            printf("[3] O nome de Ricardo aparece nos documentos.\n");
+            printf("[4] Um botao compativel com a camisa de Ricardo foi encontrado\nno escritorio.\n");
+            printf("[5] Ricardo disse estar no jardim, mas sua ligacao comecou\napenas as 23h36.\n");
+            printf("[6] Henrique escreveu \"R.M.\" em uma anotacao sobre\nas transferencias.\n");
+
+            printf("\nTodas as evidencias apontam para Ricardo Mendes.\n");
+
+            printf("\nCASO RESOLVIDO!!!!\n");
             break;
         case 4:
             printf("\nVoce acusou Ana Souza.");
-            printf("\n.....");
+            printf("\nAna conhecia a rotina da mansao, mas as evidencias\n");
+            printf("nao comprovam que ela participou do assassinato.\n");
+
+            printf("\nCASO NAO RESOLVIDO.\n");
             break;
         default:
-            printf("\nSuspeito invalido!");
+            printf("\nSuspeito invalido!\n");
             break;
     }
 }
