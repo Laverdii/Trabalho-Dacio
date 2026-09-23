@@ -26,8 +26,8 @@ void menu_principal(){
     printf("  |_____/|______|  |_|  |______|  |_|  |_____|   \\/   |______|       \\_\\\n");
     printf("\n================================================================================\n\n");
     
-    printf("1. Jogar\n");
-    printf("2. Sair\n");
+    printf("[1]. Jogar\n");
+    printf("[2]. Sair\n");
     printf("Escolha uma opcao: ");
     scanf("%d", &opcao);
 
@@ -49,9 +49,7 @@ void iniciar_jogo(){
     printf("\n\nDigite o nome do detetive: ");
     scanf("%s", nome);
 
-    printf("\n");
-    printf("Boa sorte, detetive %s.\n", nome);
-    printf("\n");
+    printf("\nBoa sorte, detetive %s.\n\n", nome);
 
     // Introdução
 
@@ -162,11 +160,12 @@ void conversar(){
     printf("\n========================================\n"); 
     printf("        CONVERSAR COM O SUSPEITO\n");
     printf("========================================\n");
-    printf("\nEscolha uma pessoa para investigar: ");
-    printf("\n\n1. CARLOS OLIVEIRA");
-    printf("\n2. MARIANA OLIVEIRA");
-    printf("\n3. RICARDO MENDES");
-    printf("\n4. ANA SOUZA\n");
+    printf("\nEscolha uma pessoa para investigar: \n");
+    printf("\n[1]. CARLOS OLIVEIRA");
+    printf("\n[2]. MARIANA OLIVEIRA");
+    printf("\n[3]. RICARDO MENDES");
+    printf("\n[4]. ANA SOUZA");
+    printf("\nEscolha uma opcao: ");
     scanf("%d", &pessoa);
 
     switch (pessoa) {
@@ -240,14 +239,14 @@ void investigar(){
     printf("\n========================================\n"); 
     printf("              INVESTIGACAO\n");
     printf("========================================\n");
-    printf("\nEscolha um comodo para investigar: ");
-    printf("\n\n1. Sala de Estar");
-    printf("\n2. Cozinha");
-    printf("\n3. Quarto");
-    printf("\n4. Escritorio (Cena do crime)");
-    printf("\n5. Jardim");
-    printf("\n6. Biblioteca");
-    printf("\n\nEscolha uma opcao: ");
+    printf("\nEscolha um comodo para investigar: \n");
+    printf("\n[1]. Sala de Estar");
+    printf("\n[2]. Cozinha");
+    printf("\n[3]. Quarto");
+    printf("\n[4]. Escritorio (Cena do crime)");
+    printf("\n[5]. Jardim");
+    printf("\n[6]. Biblioteca\n");
+    printf("\nEscolha uma opcao: ");
     scanf("%d", &comodo);
 
     switch (comodo){
@@ -346,11 +345,12 @@ void acusacao (){
     printf("              ACUSACAO\n");
     printf("========================================\n");
 
-    printf("\nQuem voce acredita ser o responsavel?");
-    printf("\n\n1. Carlos Oliveira");
-    printf("\n2. Mariana Oliveira");
-    printf("\n3. Ricardo Mendes");
-    printf("\n4. Ana Souza\n");
+    printf("\nQuem voce acredita ser o responsavel?\n");
+    printf("\n[1]. Carlos Oliveira");
+    printf("\n[2]. Mariana Oliveira");
+    printf("\n[3]. Ricardo Mendes");
+    printf("\n[4]. Ana Souza");
+    print("\nEscolha uma opcao: ");
     scanf("%d", &suspeito);
     
     switch (suspeito){
