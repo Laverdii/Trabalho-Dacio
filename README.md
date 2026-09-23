@@ -39,10 +39,82 @@ Apresenta-se a seguir o fluxo completo de navegação e as etapas de interação
 ---
 
 ## 3. Fluxograma da Lógica do Sistema
-<p align="center">
-  <img src="./docs/fluxograma_jogo_investigacao.svg" alt="Fluxograma do Projeto">
-</p>
+```mermaid
+flowchart TD
+    n1((INÍCIO<br/>Execução do programa))
+    n2[Exibe Menu Principal<br/>1. Jogar &nbsp;&nbsp;2. Sair]
+    n3{Opção escolhida?}
+    n4((FIM<br/>Programa encerrado<br/>de forma limpa))
+    errMain[/Entrada inválida<br/>Exibe erro e reexibe Menu Principal/]
 
+    n5[Exibe Menu de Seleção de Caso<br/>1. Caso 1 Fácil - 12 turnos<br/>2. Caso 2 Médio - 8 turnos<br/>3. Caso 3 Difícil - 5 turnos<br/>4. Voltar ao menu principal]
+    n6{Opção selecionada?}
+    errCase[/Opção inexistente<br/>Exibe erro e reexibe seleção de caso/]
+
+    n7[Carrega caso: define turnos e exibe<br/>CONTEXTO/HISTÓRIA + pistas preliminares]
+    n8[Exibe Menu de Ações<br/>1. Investigar cômodo &nbsp;2. Conversar c/ suspeito<br/>3. Ver inventário &nbsp;4. Fazer acusação &nbsp;5. Desistir]
+    n9{Ação escolhida?}
+    errAction[/Opção inválida<br/>Exibe erro e reexibe Menu de Ações/]
+
+    n10[Exibe lista de cômodos do caso atual]
+    n11{Cômodo já<br/>foi explorado?}
+    n12[/Erro: cômodo já explorado<br/>retorna à lista, sem consumir turno/]
+    n13[Explora cômodo: revela pistas/itens]
+    n14[Consome 1 turno]
+
+    n18[Exibe lista de suspeitos]
+    n19[Suspeito interage: revela<br/>pista ou depoimento]
+    n20[Consome 1 turno]
+
+    n21[Exibe itens e pistas coletados<br/>NÃO consome turno]
+
+    n15{Turnos restantes<br/>> 0?}
+    n16((DERROTA<br/>Turnos esgotados<br/>sem acusação correta))
+
+    n22[Solicita ao jogador que<br/>aponte o suspeito culpado]
+    n23{Acusação correta?}
+    n24((VITÓRIA!<br/>Jogador acerta o culpado))
+    n25((DERROTA<br/>Acusação incorreta))
+    n26[Encerra partida atual<br/>Desistir do caso]
+
+    n1 --> n2 --> n3
+    n3 -->|1. Jogar| n5
+    n3 -->|2. Sair| n4
+    n3 -->|Opção inválida| errMain --> n2
+
+    n5 --> n6
+    n6 -->|1/2/3. Seleciona caso| n7
+    n6 -->|4. Voltar ao menu principal| n2
+    n6 -->|Opção inexistente| errCase --> n5
+
+    n7 --> n8 --> n9
+
+    n9 -->|1. Investigar cômodo| n10
+    n9 -->|2. Conversar c/ suspeito| n18
+    n9 -->|3. Ver inventário| n21
+    n9 -->|4. Fazer acusação| n22
+    n9 -->|5. Desistir| n26
+    n9 -->|Opção inválida| errAction --> n8
+
+    n10 --> n11
+    n11 -->|Sim| n12 --> n10
+    n11 -->|Não| n13 --> n14 --> n15
+
+    n18 --> n19 --> n20 --> n15
+
+    n21 -->|Retorna sem turno| n8
+
+    n15 -->|Turnos = 0| n16
+    n15 -->|Turnos > 0| n8
+    n16 -->|Retorna à seleção de caso| n5
+
+    n22 --> n23
+    n23 -->|Sim, correto| n24
+    n23 -->|Não, incorreto| n25
+    n24 -->|Retorna à seleção de caso| n5
+    n25 -->|Retorna à seleção de caso| n5
+    n26 -->|Retorna à seleção de caso| n5
+```
 ---
 
 ## 4. Estrutura de Dados
