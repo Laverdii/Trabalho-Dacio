@@ -187,7 +187,10 @@ void acusacao (){
     }
 }
 
-// void sair(){}
+void sair() {
+    printf("\nCaso encerrado...\n");
+    exit(0);
+}
 
 int main() {
     menu_principal();
