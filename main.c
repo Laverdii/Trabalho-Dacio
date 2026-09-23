@@ -104,34 +104,33 @@ void iniciar_jogo(){
     printf("============================================================\n\n");
 
     printf("+----------------------------------------------------------+\n");
-    printf("| 1 - CARLOS OLIVEIRA                                     |\n");
-    printf("|     Irmao da vitima.                                    |\n");
-    printf("|     Diz que estava na sala assistindo televisao.        |\n");
+    printf("| 1. CARLOS OLIVEIRA                                     |\n");
+    printf("|    Irmao da vitima.                                    |\n");
+    printf("|    Diz que estava na sala assistindo televisao.        |\n");
     printf("+----------------------------------------------------------+\n");
 
-    printf("| 2 - MARIANA OLIVEIRA                                   |\n");
-    printf("|     Esposa da vitima.                                  |\n");
-    printf("|     Afirma que estava na cozinha preparando uma bebida.|\n");
+    printf("| 2. MARIANA OLIVEIRA                                   |\n");
+    printf("|    Esposa da vitima.                                  |\n");
+    printf("|    Afirma que estava na cozinha preparando uma bebida.|\n");
     printf("+----------------------------------------------------------+\n");
 
-    printf("| 3 - RICARDO MENDES                                     |\n");
-    printf("|     Socio da vitima.                                   |\n");
-    printf("|     Afirma que estava no jardim fazendo uma ligacao.   |\n");
+    printf("| 3. RICARDO MENDES                                     |\n");
+    printf("|    Socio da vitima.                                   |\n");
+    printf("|    Afirma que estava no jardim fazendo uma ligacao.   |\n");
     printf("+----------------------------------------------------------+\n");
 
-    printf("| 4 - ANA SOUZA                                          |\n");
-    printf("|     Funcionaria da mansao.                             |\n");
-    printf("|     Afirma que estava organizando objetos na sala.     |\n");
+    printf("| 4. ANA SOUZA                                          |\n");
+    printf("|    Funcionaria da mansao.                             |\n");
+    printf("|    Afirma que estava organizando objetos na sala.     |\n");
     printf("+----------------------------------------------------------+\n\n");
 
     printf("============================================================\n");
     printf("                    MENU DO CASO                            \n");
     printf("============================================================\n\n");
-    printf("[1]. Explorar os comodos da mansao\n");
-    printf("[2]. Interrogar um suspeito\n");
-    printf("[3]. Acusar um suspeito (encerrar o caso)\n");
-    printf("[4]. Sair sem resolver\n");
-    printf("Escolha uma opcao: ");
+    printf("[1] Explorar os comodos da mansao\n");
+    printf("[2] Interrogar um suspeito\n");
+    printf("[3] Acusar um suspeito (encerrar o caso)\n");
+    printf("[4] Sair sem resolver\n");
     scanf("%d", &opcao);
 
     switch (opcao){
