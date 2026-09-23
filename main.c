@@ -233,7 +233,7 @@ void investigar(){
     printf("|                                                    |\n");
     printf("|                                  QUARTO            |\n");
     printf("|                                                    |\n");
-    printf("|   ESCRITORIO   +                                  |\n");
+    printf("|   ESCRITORIO    +                                  |\n");
     printf("|                 |                                  |\n");
     printf("+-----------------+-----------------+----------------+\n");
 
