@@ -34,8 +34,13 @@ void menu_principal(){
     switch (opcao) {
         case 1 :
             iniciar_jogo();
+            break;
         case 2 :
             sair();
+            break;
+        default:
+            printf("Opcao invalida!");
+            break;
     }
 }
 
