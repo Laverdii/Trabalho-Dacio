@@ -118,8 +118,9 @@ flowchart TD
 ---
 
 ## 4. Estrutura de Dados
+Estruturas de dados planejadas: as estruturas abaixo representam a organização dos dados prevista para as próximas etapas do desenvolvimento. Sua implementação ocorrerá conforme os conteúdos necessários forem apresentados na disciplina.
 
-O sistema utilizará estruturas heterogêneas (`struct`) para organizar as principais informações utilizadas durante a investigação. As estruturas previstas são:
+O sistema utilizará estruturas heterogêneas (struct) para organizar as principais informações utilizadas durante a investigação. As estruturas previstas são:
 
 ```c
 // Estrutura para armazenamento dos casos
