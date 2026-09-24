@@ -47,7 +47,7 @@ void iniciar_jogo(){
 
     // Tela inicial
 
-    printf("Disclaimer: JOGO NAO FUNCIONAL, pois nao funciona sem laco de repeticao");
+    printf("Disclaimer: VERSAO INICIAL, funcionalidades estao de acordo com os conteudos vistos ate o momento.");
     printf("\n\nDigite o nome do detetive: ");
     scanf("%s", nome);
 
