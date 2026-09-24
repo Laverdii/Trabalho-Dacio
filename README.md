@@ -10,7 +10,7 @@ O foco principal é proporcionar uma experiência de investigação baseada na t
 
 ## 2. Fluxo de Utilização Esperado para o Sistema
 
-Apresenta-se a seguir o fluxo completo de navegação e as etapas de interação do usuário durante a execução do jogo:
+O fluxo apresentado a seguir representa o funcionamento planejado para o sistema durante as próximas etapas de desenvolvimento. As funcionalidades serão implementadas gradualmente conforme os conteúdos da disciplina forem apresentados e estudados. A versão atual do código contempla apenas parte dessas funcionalidades, de acordo com os conceitos já abordados em aula.
 
 1. Ao iniciar o programa, o usuário visualizará o menu principal com as opções:
    - `1. Jogar`
