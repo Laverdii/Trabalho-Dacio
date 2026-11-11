@@ -51,6 +51,56 @@ void menu_principal(){
     }
 }
 
+int escolher_historia(){
+    int opcao = 0;
+
+    while (opcao < 1 || opcao > 3){
+        printf("\n============================================================\n");
+        printf("                    ESCOLHA O CASO\n");
+        printf("============================================================\n");
+        printf("[1]. Caso 01 - O Assassinato da Mansao Oliveira\n");
+        printf("[2]. Caso 02 - O Roubo do Museu Municipal\n");
+        printf("[3]. Caso 03 - O Envenenamento no Trem Noturno\n");
+        printf("Escolha uma opcao: ");
+        opcao = ler_numero();
+
+        if (opcao < 1 || opcao > 3){
+            printf("\nOpcao invalida!\n");
+        }
+    }
+    return opcao;
+}
+
+int escolher_dificuldade(){
+    int opcao = 0;
+
+    while (opcao < 1 || opcao > 3){
+        printf("\n============================================================\n");
+        printf("                  ESCOLHA A DIFICULDADE\n");
+        printf("============================================================\n");
+        printf("Cada investigacao ou interrogatorio gasta 1 turno.\n");
+        printf("Quando os turnos acabarem, voce sera obrigado a acusar.\n\n");
+        printf("[1]. Facil   - 12 turnos\n");
+        printf("[2]. Medio   -  8 turnos\n");
+        printf("[3]. Dificil -  5 turnos\n");
+        printf("Escolha uma opcao: ");
+        opcao = ler_numero();
+
+        if (opcao < 1 || opcao > 3){
+            printf("\nOpcao invalida!\n");
+        }
+    }
+
+    switch (opcao){
+        case 1:
+            return 12;
+        case 2:
+            return 8;
+        default:
+            return 5;
+    }
+}
+
 void iniciar_jogo(){
     char nome[30];
     int opcao;
