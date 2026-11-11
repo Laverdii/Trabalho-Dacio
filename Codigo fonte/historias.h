@@ -430,3 +430,342 @@ void historia1_acusacao(){
     }
     pausar();
 }
+
+// ============================================================
+//            CASO 02 - O ROUBO DO MUSEU MUNICIPAL
+//            Culpada: Beatriz Lima  |  Provas necessarias: 3
+// ============================================================
+
+void historia2_introducao(){
+    printf("============================================================\n");
+    printf("                    CASO 02 - O ROUBO                       \n");
+    printf("                     DO MUSEU MUNICIPAL                     \n");
+    printf("============================================================\n\n");
+
+    printf("            ____________________________\n");
+    printf("           /                            \\\n");
+    printf("          /__________MUSEU_______________\\\n");
+    printf("           |  ||  |  ||  |  ||  |  ||  |\n");
+    printf("           |  ||  |  ||  |  ||  |  ||  |\n");
+    printf("           |  ||  |  ||  |  ||  |  ||  |\n");
+    printf("        ___|__||__|__||__|__||__|__||__|___\n\n");
+
+    printf("Sao 07h00 de uma segunda-feira.\n\n");
+
+    printf("Ao abrir o Museu Municipal, os funcionarios descobriram\n");
+    printf("que o diamante \"Estrela do Sul\" desapareceu da vitrine.\n\n");
+
+    printf("A vitrine nao foi quebrada. Ela foi aberta com uma chave.\n");
+    printf("Cinco pessoas estiveram no museu durante a noite.\n\n");
+
+    printf("Sua missao e descobrir quem roubou o diamante.\n\n");
+
+    printf("============================================================\n");
+    printf("                  SUSPEITOS DA INVESTIGACAO                 \n");
+    printf("============================================================\n\n");
+
+    printf("+----------------------------------------------------------+\n");
+    printf("| 1. PAULO RAMOS                                           |\n");
+    printf("|    Seguranca noturno.                                    |\n");
+    printf("|    Diz que passou a noite na guarita.                    |\n");
+    printf("+----------------------------------------------------------+\n");
+
+    printf("| 2. BEATRIZ LIMA                                          |\n");
+    printf("|    Curadora do museu.                                    |\n");
+    printf("|    Afirma que foi embora as 22h.                         |\n");
+    printf("+----------------------------------------------------------+\n");
+
+    printf("| 3. JORGE TAVARES                                         |\n");
+    printf("|    Zelador.                                              |\n");
+    printf("|    Diz que estava limpando o segundo andar.              |\n");
+    printf("+----------------------------------------------------------+\n");
+
+    printf("| 4. FERNANDO COSTA                                        |\n");
+    printf("|    Diretor do museu.                                     |\n");
+    printf("|    Diz que passou na sala dele so para pegar papeis.     |\n");
+    printf("+----------------------------------------------------------+\n");
+
+    printf("| 5. CLARA NUNES                                           |\n");
+    printf("|    Restauradora de obras de arte.                        |\n");
+    printf("|    Afirma que trabalhou no atelie ate as 21h.            |\n");
+    printf("+----------------------------------------------------------+\n\n");
+}
+
+int historia2_conversar(){
+    int pessoa;
+
+    system("cls");
+
+    printf("\n========================================\n");
+    printf("        CONVERSAR COM O SUSPEITO\n");
+    printf("========================================\n");
+    printf("\n[1]. PAULO RAMOS");
+    printf("\n[2]. BEATRIZ LIMA");
+    printf("\n[3]. JORGE TAVARES");
+    printf("\n[4]. FERNANDO COSTA");
+    printf("\n[5]. CLARA NUNES");
+    printf("\nEscolha uma opcao: ");
+    scanf("%d", &pessoa);
+
+    switch (pessoa){
+        case 1:
+            printf("\nPaulo parece envergonhado.\n");
+            printf("\nPaulo Ramos: ");
+            printf("- Tomei um cafe que deixaram na guarita e\n");
+            printf("senti muito sono. Acordei so de manha.\n");
+            printf("Nao sei quem deixou o cafe la.\n");
+            break;
+        case 2:
+            printf("\nBeatriz responde rapido demais.\n");
+            printf("Voce sente um forte perfume floral.\n");
+            printf("\nBeatriz Lima: ");
+            printf("- Sai as 22h, como sempre.\n");
+            printf("Sou a unica com o codigo das cameras, mas\n");
+            printf("eu jamais roubaria o museu.\n");
+            break;
+        case 3:
+            printf("\nJorge fala com calma.\n");
+            printf("\nJorge Tavares: ");
+            printf("- Por volta das 2h vi uma luz acesa no\n");
+            printf("escritorio da curadoria. Achei estranho,\n");
+            printf("porque a doutora ja tinha ido embora.\n");
+            break;
+        case 4:
+            printf("\nFernando parece irritado com as perguntas.\n");
+            printf("\nFernando Costa: ");
+            printf("- O museu esta cheio de dividas, e verdade.\n");
+            printf("Mas passei a noite num jantar com patrocinadores.\n");
+            printf("So vim aqui as 20h pegar uns papeis.\n");
+            break;
+        case 5:
+            printf("\nClara fala baixo, com medo de se complicar.\n");
+            printf("\nClara Nunes: ");
+            printf("- Fui embora as 21h. Mas semana passada a\n");
+            printf("doutora Beatriz pegou cera do meu atelie.\n");
+            printf("Disse que era para fazer um molde.\n");
+            break;
+        default:
+            printf("\nOpcao invalida! (nenhum turno foi gasto)\n");
+            pausar();
+            return 0;
+    }
+    pausar();
+    return 1;
+}
+
+int historia2_investigar(){
+    int local;
+
+    system("cls");
+
+    printf("\nPLANTA DO MUSEU!\n");
+    printf("+----------------+----------------+----------------+\n");
+    printf("|                |                |                |\n");
+    printf("|    GUARITA     |    SALA DE     |   ESCRITORIO   |\n");
+    printf("|                |   SEGURANCA    |   CURADORIA    |\n");
+    printf("+------<  >------+------<  >------+------<  >------+\n");
+    printf("|                                                  |\n");
+    printf("|                 SALAO PRINCIPAL                  |\n");
+    printf("|                   [ VITRINE ]                    |\n");
+    printf("+------<  >------+----------------+------<  >------+\n");
+    printf("|    SALA DO     |                |   ATELIE DE    |\n");
+    printf("|    DIRETOR     |    ENTRADA     |  RESTAURACAO   |\n");
+    printf("+----------------+-----<    >-----+----------------+\n");
+
+    printf("\n========================================\n");
+    printf("              INVESTIGACAO\n");
+    printf("========================================\n");
+    printf("\n[1]. Salao principal (Vitrine)");
+    printf("\n[2]. Sala de seguranca");
+    printf("\n[3]. Escritorio da curadoria");
+    printf("\n[4]. Guarita");
+    printf("\n[5]. Sala do diretor");
+    printf("\n[6]. Atelie de restauracao");
+    printf("\nEscolha uma opcao: ");
+    scanf("%d", &local);
+
+    switch (local){
+        case 1:
+            printf("\n+---------------------------+\n");
+            printf("|  [=]      [=]      [=]    |\n");
+            printf("|                           |\n");
+            printf("|        ___________        |\n");
+            printf("|       |  VITRINE  |       |\n");
+            printf("|       |  (vazia)  |       |\n");
+            printf("|       |___________|       |\n");
+            printf("|          |     |          |\n");
+            printf("|      SALAO PRINCIPAL      |\n");
+            printf("+----------<     >----------+\n");
+
+            printf("\nVoce investigou o salao principal.\n");
+            printf("\nITEM ENCONTRADO: LUVA BRANCA\n");
+            printf("Uma luva caida atras da vitrine.\n");
+            printf("Ela tem um forte cheiro de perfume floral.\n");
+            adicionar_item("Luva branca perfumada");
+            break;
+        case 2:
+            printf("\n+---------------------------+\n");
+            printf("|  ______   ______   ______ |\n");
+            printf("| |cam 1 | |cam 2 | |cam 3 ||\n");
+            printf("| |______| |______| |______||\n");
+            printf("|                           |\n");
+            printf("|   ____________________    |\n");
+            printf("|  |__PAINEL______[o]___|   |\n");
+            printf("|                           |\n");
+            printf("|     SALA DE SEGURANCA     |\n");
+            printf("+----------<     >----------+\n");
+
+            printf("\nVoce investigou a sala de seguranca.\n");
+            printf("\nITEM ENCONTRADO: REGISTRO DAS CAMERAS\n");
+            printf("As cameras foram desligadas as 02h10.\n");
+            printf("Foi usado o codigo de acesso da curadoria.\n");
+            adicionar_item("Registro das cameras");
+            break;
+        case 3:
+            printf("\n+---------------------------+\n");
+            printf("| |=|=|=|=|           ___   |\n");
+            printf("| |=|=|=|=|          |   |  |\n");
+            printf("|                    |___|  |\n");
+            printf("|      ____________         |\n");
+            printf("|     |____________|  []    |\n");
+            printf("|       |        |          |\n");
+            printf("|   ESCRITORIO CURADORIA    |\n");
+            printf("+----------<     >----------+\n");
+
+            printf("\nVoce investigou o escritorio da curadoria.\n");
+            printf("\nITEM ENCONTRADO: PASSAGEM AEREA\n");
+            printf("Uma passagem para Lisboa, saindo hoje a tarde,\n");
+            printf("no nome de Beatriz Lima. Comprada ha dois dias.\n");
+            adicionar_item("Passagem aerea");
+            break;
+        case 4:
+            printf("\n+-------------------+\n");
+            printf("|   ___________     |\n");
+            printf("|  |  [ TV ]   |    |\n");
+            printf("|  |___________|    |\n");
+            printf("|                   |\n");
+            printf("|    _____    (c)   |\n");
+            printf("|   [_____]  cafe   |\n");
+            printf("|      GUARITA      |\n");
+            printf("+-------<   >-------+\n");
+
+            printf("\nVoce investigou a guarita.\n");
+            printf("\nITEM ENCONTRADO: COPO DE CAFE\n");
+            printf("O copo tem restos de um remedio para dormir.\n");
+            printf("Alguem queria o seguranca dormindo.\n");
+            adicionar_item("Copo de cafe com remedio");
+            break;
+        case 5:
+            printf("\n+---------------------------+\n");
+            printf("|   _____________      _    |\n");
+            printf("|  |   QUADRO    |    | |   |\n");
+            printf("|  |_____________|    |_|   |\n");
+            printf("|                           |\n");
+            printf("|     ______________        |\n");
+            printf("|    |______________|       |\n");
+            printf("|      |          |         |\n");
+            printf("|      SALA DO DIRETOR      |\n");
+            printf("+----------<     >----------+\n");
+
+            printf("\nVoce investigou a sala do diretor.\n");
+            printf("\nITEM ENCONTRADO: RECIBO DE RESTAURANTE\n");
+            printf("O recibo mostra que Fernando pagou a conta\n");
+            printf("de um jantar as 03h15 da manha.\n");
+            printf("\nPISTA:\n");
+            printf("Fernando estava longe do museu na hora do roubo.\n");
+            adicionar_item("Recibo de restaurante (03h15)");
+            break;
+        case 6:
+            printf("\n+---------------------------+\n");
+            printf("|      /\\                   |\n");
+            printf("|     /  \\    ___________   |\n");
+            printf("|    /____\\  |  QUADRO   |  |\n");
+            printf("|     |  |   |___________|  |\n");
+            printf("|     |  |                  |\n");
+            printf("|  [tintas]  [pinceis] [cera]\n");
+            printf("|   ATELIE DE RESTAURACAO   |\n");
+            printf("+----------<     >----------+\n");
+
+            printf("\nVoce investigou o atelie de restauracao.\n");
+            printf("\nITEM ENCONTRADO: MOLDE DE CERA\n");
+            printf("Um molde com o formato da chave da vitrine.\n");
+            printf("Na caixa esta escrito: \"B.L.\"\n");
+            printf("\nPISTA:\n");
+            printf("Alguem fez uma copia da chave da vitrine.\n");
+            adicionar_item("Molde de cera (B.L.)");
+            break;
+        default:
+            printf("\nLocal invalido! (nenhum turno foi gasto)\n");
+            pausar();
+            return 0;
+    }
+    pausar();
+    return 1;
+}
+
+void historia2_acusacao(){
+    int suspeito;
+
+    system("cls");
+
+    printf("\n========================================\n");
+    printf("              ACUSACAO\n");
+    printf("========================================\n");
+    printf("\n[1]. Paulo Ramos");
+    printf("\n[2]. Beatriz Lima");
+    printf("\n[3]. Jorge Tavares");
+    printf("\n[4]. Fernando Costa");
+    printf("\n[5]. Clara Nunes");
+    printf("\nEscolha uma opcao: ");
+    scanf("%d", &suspeito);
+
+    switch (suspeito){
+        case 1:
+            printf("\nVoce acusou Paulo Ramos.\n");
+            printf("Paulo dormiu em servico, mas foi drogado.\n");
+            printf("Ele nao tinha a chave da vitrine.\n");
+            printf("\nCASO NAO RESOLVIDO.\n");
+            break;
+        case 2:
+            printf("\nVoce acusou Beatriz Lima.\n");
+
+            if (total_itens < 3){
+                printf("\nVoce acertou a suspeita, mas tem apenas %d prova(s).\n", total_itens);
+                printf("Eram necessarias pelo menos 3 provas.\n");
+                printf("Beatriz embarcou para Lisboa com o diamante.\n");
+                printf("\nCASO NAO RESOLVIDO.\n");
+                break;
+            }
+
+            printf("\n[1] As cameras foram desligadas com o codigo da curadoria.\n");
+            printf("[2] A luva perto da vitrine tem o perfume de Beatriz.\n");
+            printf("[3] O molde da chave da vitrine tinha as iniciais B.L.\n");
+            printf("[4] O cafe do seguranca tinha remedio para dormir.\n");
+            printf("[5] Ela comprou uma passagem para fugir do pais.\n");
+            printf("\nO diamante foi encontrado na bolsa de Beatriz.\n");
+            printf("\nCASO RESOLVIDO!!!!\n");
+            break;
+        case 3:
+            printf("\nVoce acusou Jorge Tavares.\n");
+            printf("Jorge foi quem viu a luz no escritorio.\n");
+            printf("Nenhuma prova o liga ao roubo.\n");
+            printf("\nCASO NAO RESOLVIDO.\n");
+            break;
+        case 4:
+            printf("\nVoce acusou Fernando Costa.\n");
+            printf("O museu tinha dividas, mas o recibo mostra que\n");
+            printf("Fernando estava num restaurante na hora do roubo.\n");
+            printf("\nCASO NAO RESOLVIDO.\n");
+            break;
+        case 5:
+            printf("\nVoce acusou Clara Nunes.\n");
+            printf("A cera era do atelie de Clara, mas quem a usou\n");
+            printf("para copiar a chave foi outra pessoa.\n");
+            printf("\nCASO NAO RESOLVIDO.\n");
+            break;
+        default:
+            printf("\nSuspeito invalido!\n");
+            break;
+    }
+    pausar();
+}
