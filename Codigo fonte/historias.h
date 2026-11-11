@@ -769,3 +769,328 @@ void historia2_acusacao(){
     }
     pausar();
 }
+
+// ============================================================
+//            CASO 03 - O ENVENENAMENTO NO TREM NOTURNO
+//            Culpada: Lucia Prado  |  Provas necessarias: 3
+// ============================================================
+
+void historia3_introducao(){
+    printf("============================================================\n");
+    printf("                  CASO 03 - O ENVENENAMENTO                 \n");
+    printf("                      NO TREM NOTURNO                       \n");
+    printf("============================================================\n\n");
+
+    printf("      ____      ________________   ________________\n");
+    printf("     |    |____|  []  []  []    |_|  []  []  []    |\n");
+    printf("     |  __     |                | |                |\n");
+    printf("     |_|__|____|________________|_|________________|\n");
+    printf("       (O)  (O)    (O)    (O)       (O)    (O)\n\n");
+
+    printf("Sao 23h15. O trem noturno segue viagem para o sul.\n\n");
+
+    printf("O medico Augusto Ferraz foi encontrado morto\n");
+    printf("em sua cabine. Ao lado dele, uma xicara de cha.\n\n");
+
+    printf("O trem so para na proxima estacao em algumas horas.\n");
+    printf("O culpado ainda esta a bordo.\n\n");
+
+    printf("============================================================\n");
+    printf("                  SUSPEITOS DA INVESTIGACAO                 \n");
+    printf("============================================================\n\n");
+
+    printf("+----------------------------------------------------------+\n");
+    printf("| 1. HELENA FERRAZ                                         |\n");
+    printf("|    Filha da vitima.                                      |\n");
+    printf("|    Diz que estava lendo no vagao restaurante.            |\n");
+    printf("+----------------------------------------------------------+\n");
+
+    printf("| 2. OTAVIO BRANDAO                                        |\n");
+    printf("|    Garcom do trem.                                       |\n");
+    printf("|    Preparou o cha da vitima.                             |\n");
+    printf("+----------------------------------------------------------+\n");
+
+    printf("| 3. LUCIA PRADO                                           |\n");
+    printf("|    Enfermeira particular da vitima.                      |\n");
+    printf("|    Afirma que nao saiu da propria cabine.                |\n");
+    printf("+----------------------------------------------------------+\n");
+
+    printf("| 4. ROGERIO ALVES                                         |\n");
+    printf("|    Advogado da vitima.                                   |\n");
+    printf("|    Diz que estava dormindo na cabine dele.               |\n");
+    printf("+----------------------------------------------------------+\n");
+
+    printf("| 5. MARTA SILVA                                           |\n");
+    printf("|    Passageira da segunda classe.                         |\n");
+    printf("|    Ja foi paciente do doutor Augusto.                    |\n");
+    printf("+----------------------------------------------------------+\n\n");
+}
+
+int historia3_conversar(){
+    int pessoa;
+
+    system("cls");
+
+    printf("\n========================================\n");
+    printf("        CONVERSAR COM O SUSPEITO\n");
+    printf("========================================\n");
+    printf("\n[1]. HELENA FERRAZ");
+    printf("\n[2]. OTAVIO BRANDAO");
+    printf("\n[3]. LUCIA PRADO");
+    printf("\n[4]. ROGERIO ALVES");
+    printf("\n[5]. MARTA SILVA");
+    printf("\nEscolha uma opcao: ");
+    scanf("%d", &pessoa);
+
+    switch (pessoa){
+        case 1:
+            printf("\nHelena chora durante a conversa.\n");
+            printf("\nHelena Ferraz: ");
+            printf("- Discuti com meu pai hoje sobre o testamento.\n");
+            printf("Ele mudou tudo recentemente, mas eu nunca\n");
+            printf("faria mal a ele.\n");
+            break;
+        case 2:
+            printf("\nOtavio parece assustado.\n");
+            printf("\nOtavio Brandao: ");
+            printf("- Eu preparei o cha as 22h, sim.\n");
+            printf("Mas a enfermeira disse que ela mesma\n");
+            printf("levaria a xicara para o doutor.\n");
+            break;
+        case 3:
+            printf("\nLucia evita olhar nos seus olhos.\n");
+            printf("\nLucia Prado: ");
+            printf("- Fiquei na minha cabine a noite toda.\n");
+            printf("Nem vi o doutor depois do jantar.\n");
+            break;
+        case 4:
+            printf("\nRogerio ajeita a gravata antes de responder.\n");
+            printf("\nRogerio Alves: ");
+            printf("- No jantar, o doutor me disse que ia mudar\n");
+            printf("o testamento de novo assim que chegasse.\n");
+            printf("A enfermeira estava na mesa e ouviu tudo.\n");
+            break;
+        case 5:
+            printf("\nMarta nao esconde a raiva.\n");
+            printf("\nMarta Silva: ");
+            printf("- Aquele medico errou na minha cirurgia.\n");
+            printf("Eu odiava ele, nao vou mentir.\n");
+            printf("Mas nao sai do meu vagao. O condutor\n");
+            printf("trancou a porta entre os vagoes as 21h.\n");
+            break;
+        default:
+            printf("\nOpcao invalida! (nenhum turno foi gasto)\n");
+            pausar();
+            return 0;
+    }
+    pausar();
+    return 1;
+}
+
+int historia3_investigar(){
+    int local;
+
+    system("cls");
+
+    printf("\nPLANTA DO TREM!\n");
+    printf(" __________ ___________ _____________ __________ __________ __________\n");
+    printf("|          |           |             |          |          |          |\n");
+    printf("| BAGAGENS | 2a CLASSE | RESTAURANTE |  CABINE  |  CABINE  |  CABINE  |\n");
+    printf("|  [] []   |  : : : :  |  o-o   o-o  |  DOUTOR  |  LUCIA   | ADVOGADO |\n");
+    printf("|__________|___________|_____________|__________|__________|__________|\n");
+    printf("   (O)  (O)   (O)  (O)    (O)   (O)    (O)  (O)   (O)  (O)   (O)  (O)\n");
+
+    printf("\n========================================\n");
+    printf("              INVESTIGACAO\n");
+    printf("========================================\n");
+    printf("\n[1]. Cabine da vitima (Cena do crime)");
+    printf("\n[2]. Vagao restaurante");
+    printf("\n[3]. Cabine de Lucia");
+    printf("\n[4]. Vagao de bagagens");
+    printf("\n[5]. Cabine do advogado");
+    printf("\n[6]. Vagao da segunda classe");
+    printf("\nEscolha uma opcao: ");
+    scanf("%d", &local);
+
+    switch (local){
+        case 1:
+            printf("\n+---------------------------+\n");
+            printf("|   ____         _______    |\n");
+            printf("|  |    |       | () () |   |\n");
+            printf("|  |____|       |_______|   |\n");
+            printf("|  ______________________   |\n");
+            printf("| |       CAMA           |  |\n");
+            printf("| |______________________|  |\n");
+            printf("|      CABINE DO DOUTOR  (u)|\n");
+            printf("+----------<     >----------+\n");
+
+            printf("\nVoce investigou a cabine da vitima.\n");
+            printf("\nITEM ENCONTRADO: XICARA DE CHA\n");
+            printf("O cha tem um cheiro amargo de amendoas.\n");
+            printf("Sinal de veneno.\n");
+            adicionar_item("Xicara de cha envenenada");
+            break;
+        case 2:
+            printf("\n+---------------------------+\n");
+            printf("|  [ ]  [ ]   |   [ ]  [ ]  |\n");
+            printf("|   _______   |   _______   |\n");
+            printf("|  |_______|  |  |_______|  |\n");
+            printf("|   o     o   |   o     o   |\n");
+            printf("|  ___________|___________  |\n");
+            printf("| |___BALCAO____[cha]_____| |\n");
+            printf("|     VAGAO RESTAURANTE     |\n");
+            printf("+----------<     >----------+\n");
+
+            printf("\nVoce investigou o vagao restaurante.\n");
+            printf("\nITEM ENCONTRADO: CADERNO DE PEDIDOS\n");
+            printf("Anotacao do garcom: \"22h - cha do doutor.\n");
+            printf("Entregue para a enfermeira levar.\"\n");
+            adicionar_item("Caderno de pedidos");
+            break;
+        case 3:
+            printf("\n+---------------------------+\n");
+            printf("|   ____                    |\n");
+            printf("|  |    |      ________     |\n");
+            printf("|  |____|     | MALA   |    |\n");
+            printf("|             |________|    |\n");
+            printf("|  ______________________   |\n");
+            printf("| |       CAMA           |  |\n");
+            printf("| |______________________|  |\n");
+            printf("|      CABINE DE LUCIA      |\n");
+            printf("+----------<     >----------+\n");
+
+            printf("\nVoce investigou a cabine de Lucia.\n");
+            printf("\nITEM ENCONTRADO: FRASCO VAZIO\n");
+            printf("Um pequeno frasco sem rotulo, escondido\n");
+            printf("na mala. Tem o mesmo cheiro de amendoas.\n");
+            adicionar_item("Frasco vazio");
+            break;
+        case 4:
+            printf("\n+---------------------------+\n");
+            printf("|  ____   ____    ______    |\n");
+            printf("| |    | |    |  |      |   |\n");
+            printf("| |____| |____|  |______|   |\n");
+            printf("|  ______    ____   ____    |\n");
+            printf("| |      |  |    | |    |   |\n");
+            printf("| |______|  |____| |____|   |\n");
+            printf("|     VAGAO DE BAGAGENS     |\n");
+            printf("+----------<     >----------+\n");
+
+            printf("\nVoce investigou o vagao de bagagens.\n");
+            printf("\nITEM ENCONTRADO: CARTA DO DOUTOR\n");
+            printf("Augusto escreveu ao advogado: \"Ao chegar,\n");
+            printf("quero retirar Lucia do testamento.\"\n");
+            adicionar_item("Carta do doutor");
+            break;
+        case 5:
+            printf("\n+---------------------------+\n");
+            printf("|   ____       __________   |\n");
+            printf("|  |    |     |  PASTA   |  |\n");
+            printf("|  |____|     |__________|  |\n");
+            printf("|  ______________________   |\n");
+            printf("| |       CAMA           |  |\n");
+            printf("| |______________________|  |\n");
+            printf("|    CABINE DO ADVOGADO     |\n");
+            printf("+----------<     >----------+\n");
+
+            printf("\nVoce investigou a cabine do advogado.\n");
+            printf("\nITEM ENCONTRADO: TESTAMENTO ATUAL\n");
+            printf("Pelo testamento atual, Lucia Prado herda\n");
+            printf("metade de toda a fortuna do doutor.\n");
+            printf("\nPISTA:\n");
+            printf("Se o testamento mudasse, Lucia perderia tudo.\n");
+            adicionar_item("Testamento atual");
+            break;
+        case 6:
+            printf("\n+---------------------------+\n");
+            printf("|  [ ]   [ ]   [ ]   [ ]    |\n");
+            printf("|  _|_   _|_   _|_   _|_    |\n");
+            printf("| |___| |___| |___| |___|   |\n");
+            printf("|                           |\n");
+            printf("|  _|_   _|_   _|_   _|_    |\n");
+            printf("| |___| |___| |___| |___|   |\n");
+            printf("|  VAGAO DA SEGUNDA CLASSE  |\n");
+            printf("+----------<  X  >----------+\n");
+
+            printf("\nVoce investigou o vagao da segunda classe.\n");
+            printf("\nITEM ENCONTRADO: RECORTE DE JORNAL\n");
+            printf("Uma noticia sobre o processo de Marta Silva\n");
+            printf("contra o doutor Augusto por erro medico.\n");
+            printf("\nPISTA:\n");
+            printf("A porta deste vagao estava trancada desde as 21h.\n");
+            printf("Marta nao conseguiria chegar a cabine do doutor.\n");
+            adicionar_item("Recorte de jornal");
+            break;
+        default:
+            printf("\nLocal invalido! (nenhum turno foi gasto)\n");
+            pausar();
+            return 0;
+    }
+    pausar();
+    return 1;
+}
+
+void historia3_acusacao(){
+    int suspeito;
+
+    system("cls");
+
+    printf("\n========================================\n");
+    printf("              ACUSACAO\n");
+    printf("========================================\n");
+    printf("\n[1]. Helena Ferraz");
+    printf("\n[2]. Otavio Brandao");
+    printf("\n[3]. Lucia Prado");
+    printf("\n[4]. Rogerio Alves");
+    printf("\n[5]. Marta Silva");
+    printf("\nEscolha uma opcao: ");
+    scanf("%d", &suspeito);
+
+    switch (suspeito){
+        case 1:
+            printf("\nVoce acusou Helena Ferraz.\n");
+            printf("Helena discutiu com o pai, mas nunca tocou no cha.\n");
+            printf("\nCASO NAO RESOLVIDO.\n");
+            break;
+        case 2:
+            printf("\nVoce acusou Otavio Brandao.\n");
+            printf("Otavio preparou o cha, mas nao foi ele quem o entregou.\n");
+            printf("\nCASO NAO RESOLVIDO.\n");
+            break;
+        case 3:
+            printf("\nVoce acusou Lucia Prado.\n");
+
+            if (total_itens < 3){
+                printf("\nVoce acertou a suspeita, mas tem apenas %d prova(s).\n", total_itens);
+                printf("Eram necessarias pelo menos 3 provas.\n");
+                printf("Lucia desceu na estacao e desapareceu.\n");
+                printf("\nCASO NAO RESOLVIDO.\n");
+                break;
+            }
+
+            printf("\n[1] O cha estava envenenado.\n");
+            printf("[2] Lucia levou o cha ate a cabine do doutor.\n");
+            printf("[3] O frasco do veneno estava na mala dela.\n");
+            printf("[4] Pelo testamento atual, ela herdaria metade da fortuna.\n");
+            printf("[5] O doutor ia retira-la do testamento ao chegar.\n");
+            printf("\nLucia confessa o crime.\n");
+            printf("\nCASO RESOLVIDO!!!!\n");
+            break;
+        case 4:
+            printf("\nVoce acusou Rogerio Alves.\n");
+            printf("Rogerio sabia do testamento, mas nao ganharia\n");
+            printf("nada com a morte do doutor.\n");
+            printf("\nCASO NAO RESOLVIDO.\n");
+            break;
+        case 5:
+            printf("\nVoce acusou Marta Silva.\n");
+            printf("Marta tinha motivo, mas a porta do vagao dela\n");
+            printf("estava trancada a noite toda.\n");
+            printf("\nCASO NAO RESOLVIDO.\n");
+            break;
+        default:
+            printf("\nSuspeito invalido!\n");
+            break;
+    }
+    pausar();
+}
