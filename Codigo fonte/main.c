@@ -213,70 +213,18 @@ int conversar(){
             return historia3_conversar();
     }
 }
-void acusacao (){
-    int suspeito;
-
-    system("cls");
-
-    printf("\n========================================\n");
-    printf("              ACUSACAO\n");
-    printf("========================================\n");
-
-    printf("\nQuem voce acredita ser o responsavel?\n");
-    printf("\n[1]. Carlos Oliveira");
-    printf("\n[2]. Mariana Oliveira");
-    printf("\n[3]. Ricardo Mendes");
-    printf("\n[4]. Ana Souza");
-    printf("\nEscolha uma opcao: ");
-    scanf("%d", &suspeito);
-    
-    switch (suspeito){
+void acusacao(){
+    switch (historia){
         case 1:
-            printf("\nVoce acusou Carlos Oliveira.");
-
-            printf("\nA acusacao nao foi suficiente.\n");
-            printf("Carlos tinha motivos para discutir com Henrique,\n");
-            printf("mas as pistas encontradas nao o colocam na cena do crime.\n");
-
-            printf("\nCASO NAO RESOLVIDO.\n");
+            historia1_acusacao();
             break;
         case 2:
-            printf("\nVoce acusou Mariana Oliveira.");
-            printf("\nA taca encontrada na cozinha parecia incrimina-la,\n");
-            printf("mas a evidencia nao prova que Mariana matou Henrique.\n");
-
-            printf("\nCASO NAO RESOLVIDO.\n");
-            break;
-        case 3:
-            printf("\nVoce acusou Ricardo Mendes.");
-            
-            printf("\nAs pistas comecam a formar uma sequencia.\n\n");
-
-            printf("[1] O relogio de Henrique parou as 23h32.\n");
-            printf("[2] Henrique estava investigando movimentacoes financeiras.\n");
-            printf("[3] O nome de Ricardo aparece nos documentos.\n");
-            printf("[4] Um botao compativel com a camisa de Ricardo foi encontrado\nno escritorio.\n");
-            printf("[5] Ricardo disse estar no jardim, mas sua ligacao comecou\napenas as 23h36.\n");
-            printf("[6] Henrique escreveu \"R.M.\" em uma anotacao sobre\nas transferencias.\n");
-
-            printf("\nTodas as evidencias apontam para Ricardo Mendes.\n");
-
-            printf("\nCASO RESOLVIDO!!!!\n");
-            break;
-        case 4:
-            printf("\nVoce acusou Ana Souza.");
-            printf("\nAna conhecia a rotina da mansao, mas as evidencias\n");
-            printf("nao comprovam que ela participou do assassinato.\n");
-
-            printf("\nCASO NAO RESOLVIDO.\n");
+            historia2_acusacao();
             break;
         default:
-            printf("\nSuspeito invalido!\n");
+            historia3_acusacao();
             break;
     }
-    getchar();
-    printf("\n\nPressione Enter para continuar...");
-    getchar();
 }
 
 void sair() {
@@ -284,6 +232,10 @@ void sair() {
     exit(0);
 }
 
+int main() {
+    menu_principal();
+    return 0;
+}
 int main() {
     menu_principal();
     return 0;
