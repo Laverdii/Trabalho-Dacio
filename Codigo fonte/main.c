@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "inventario.h"   // inventario do detetive
+#include "historias.h"    // historias do detetive
 
 int historia;   // qual caso esta sendo jogado (1, 2 ou 3)
 int turnos;     // quantos turnos ainda restam
 
 void menu_principal();
+int escolher_historia();
+int escolher_dificuldade();
 void iniciar_jogo();
 void investigar();
 void conversar();
