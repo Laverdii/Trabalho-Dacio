@@ -16,7 +16,7 @@ void acusacao();
 void sair();
 
 void menu_principal(){
-    int opcao = 0;
+    int opcao;
 
     printf("================================================================================\n");
     printf("              _  ____   _____  ____      _____  ______\n");
@@ -36,7 +36,7 @@ void menu_principal(){
     printf("[1]. Jogar\n");
     printf("[2]. Sair\n");
     printf("Escolha uma opcao: ");
-    opcao = ler_numero();
+    scanf("%d", &opcao);
 
     switch (opcao) {
         case 1 :
