@@ -101,13 +101,6 @@ int escolher_dificuldade(){
     }
 }
 
-
-
-
-
-
-
-
 void iniciar_jogo(){
     char nome[30];
     int opcao;
@@ -116,114 +109,88 @@ void iniciar_jogo(){
 
     // Tela inicial
 
-    printf("Disclaimer: VERSAO INICIAL, funcionalidades estao de acordo com os conteudos vistos ate o momento.");
     printf("\n\nDigite o nome do detetive: ");
     scanf("%s", nome);
 
     printf("\nBoa sorte, detetive %s.\n\n", nome);
 
-    // Introdução
+    // Escolhas antes de comecar
 
-    printf("============================================================\n");
-    printf("                    CASO 01 - O ASSASSINATO               \n");
-    printf("                         DA MANSAO OLIVEIRA                 \n");
-    printf("============================================================\n\n");
+    historia = escolher_historia();
+    turnos = escolher_dificuldade();
+    limpar_inventario();   // cada historia comeca com o inventario vazio
 
-    printf("        |        __________           \n");
-    printf("      |         /__________\\           \n");
-    printf("     __||_______|    __    |___________\n");
-    printf("    /  ||       |  [|__|]  |           \\\n");
-    printf("   /____________|__________|____________\\\n");
-    printf("   |     __     |    __    |     __     |\n");
-    printf("   |   [|__|]   |  [|__|]  |   [|__|]   |\n");
-    printf("   |     __     |    __    |     __     |\n");
-    printf("   |   [|__|]   | ()|  |() |   [|__|]   |\n");
-    printf("___|____________|___|__|___|____________|___\n");
+    system("cls");
 
-    printf("Sao 23h47 de uma sexta-feira.\n\n");
+    // Introducao da historia escolhida
 
-    printf("A policia recebeu uma ligacao informando que um homem\n");
-    printf("havia sido encontrado morto dentro da propria residencia.\n\n");
-
-    printf("A vitima e Henrique Oliveira, empresario de 52 anos\n");
-    printf("e proprietario da Mansao Oliveira.\n\n");
-
-    printf("Quando a policia chegou ao local, encontrou a casa\n");
-    printf("trancada e quatro pessoas dentro da propriedade.\n\n");
-
-    printf("Nao havia sinais claros de arrombamento.\n");
-    printf("O assassino provavelmente era alguem que a vitima conhecia.\n\n");
-
-    printf("Voce foi chamado para assumir a investigacao.\n\n");
-
-    printf("Existem quatro suspeitos.\n");
-    printf("Todos afirmam que nao tiveram envolvimento com o crime.\n\n");
-
-    printf("Mas alguma coisa nao esta certa.\n\n");
-
-    printf("Sua missao e investigar a mansao, encontrar as pistas\n");
-    printf("e descobrir quem matou Henrique Oliveira.\n\n");
-
-    printf("============================================================\n");
-    printf("                  A INVESTIGACAO VAI COMECAR               \n");
-    printf("============================================================\n\n");
-
-     // Suspeitos
-
-    printf("============================================================\n");
-    printf("                  SUSPEITOS DA INVESTIGACAO                 \n");
-    printf("============================================================\n\n");
-
-    printf("+----------------------------------------------------------+\n");
-    printf("| 1. CARLOS OLIVEIRA                                     |\n");
-    printf("|    Irmao da vitima.                                    |\n");
-    printf("|    Diz que estava na sala assistindo televisao.        |\n");
-    printf("+----------------------------------------------------------+\n");
-
-    printf("| 2. MARIANA OLIVEIRA                                   |\n");
-    printf("|    Esposa da vitima.                                  |\n");
-    printf("|    Afirma que estava na cozinha preparando uma bebida.|\n");
-    printf("+----------------------------------------------------------+\n");
-
-    printf("| 3. RICARDO MENDES                                     |\n");
-    printf("|    Socio da vitima.                                   |\n");
-    printf("|    Afirma que estava no jardim fazendo uma ligacao.   |\n");
-    printf("+----------------------------------------------------------+\n");
-
-    printf("| 4. ANA SOUZA                                          |\n");
-    printf("|    Funcionaria da mansao.                             |\n");
-    printf("|    Afirma que estava organizando objetos na sala.     |\n");
-    printf("+----------------------------------------------------------+\n\n");
-
-    printf("============================================================\n");
-    printf("                    MENU DO CASO                            \n");
-    printf("============================================================\n\n");
-    printf("[1]. Explorar os comodos da mansao\n");
-    printf("[2]. Interrogar um suspeito\n");
-    printf("[3]. Acusar um suspeito (encerrar o caso)\n");
-    printf("[4]. Sair sem resolver\n");
-    printf("Escolha uma opcao: ");
-    scanf("%d", &opcao);
-
-    switch (opcao){
+    switch (historia){
         case 1:
-            investigar();
+            historia1_introducao();
             break;
         case 2:
-            conversar();
+            historia2_introducao();
             break;
         case 3:
-            acusacao();
-            break;
-        case 4:
-            sair();
-            break;  
-        default:
-            printf("Opcao invalida!"); 
+            historia3_introducao();
             break;
     }
-}
+    pausar();
 
+    // Laco de turnos: o jogo continua enquanto houver turnos
+
+    while (turnos > 0){
+        system("cls");
+
+        printf("============================================================\n");
+        printf("                    MENU DO CASO                            \n");
+        printf("============================================================\n");
+        printf("Detetive: %s  |  Turnos restantes: %d  |  Provas: %d\n\n", nome, turnos, total_itens);
+        printf("[1]. Explorar os locais (gasta 1 turno)\n");
+        printf("[2]. Interrogar um suspeito (gasta 1 turno)\n");
+        printf("[3]. Ver inventario\n");
+        printf("[4]. Acusar um suspeito (encerrar o caso)\n");
+        printf("[5]. Sair sem resolver\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
+
+        switch (opcao){
+            case 1:
+                turnos = turnos - investigar();
+                break;
+            case 2:
+                turnos = turnos - conversar();
+                break;
+            case 3:
+                mostrar_inventario();
+                pausar();
+                break;
+            case 4:
+                acusacao();
+                return;
+            case 5:
+                sair();
+                break;
+            default:
+                printf("Opcao invalida!");
+                pausar();
+                break;
+        }
+    }
+
+    // Os turnos acabaram
+
+    system("cls");
+    printf("\n========================================\n");
+    printf("          O TEMPO ACABOU!\n");
+    printf("========================================\n");
+    printf("\nA policia exige uma resposta agora.\n");
+    printf("Voce precisa fazer sua acusacao com as provas que tem.\n");
+    mostrar_inventario();
+    printf("\n\nPressione Enter para continuar...");
+    getchar();
+    acusacao();
+}
 
 void conversar(){
     int pessoa;
@@ -287,198 +254,15 @@ void conversar(){
     getchar();
 }
 
-void investigar(){
-    int comodo;
-
-    printf("\nPLANTA PRIMEIRO ANDAR!\n");
-    printf("+-----------------+-----------------+----------------+ \n");
-    printf("|     . . . escada|                 |   BIBLIOTECA   |-----------]\n");
-    printf("|    +------------|                 |                |           ]\n");
-    printf("|                 |  SALA DE ESTAR  |                |  JARDIM   ]\n");
-    printf("|                 |                 |                |           ]\n");
-    printf("|    COZINHA                        |                            ]\n");
-    printf("|                                                    +--<     >--]\n");
-    printf("|                                                    |\n");
-    printf("+-----------------+-----<    >------+----------------+\n");
-
-    printf("\nPLANTA SEGUNDO ANDAR!\n");
-    printf("\n+-----------------+-----------------+----------------+ \n");
-    printf("|escada . . .                                        |\n");
-    printf("|-----------------+                                  |\n");
-    printf("|                                                    |\n");
-    printf("|                                  QUARTO            |\n");
-    printf("|                                                    |\n");
-    printf("|   ESCRITORIO    +                                  |\n");
-    printf("|                 |                                  |\n");
-    printf("+-----------------+-----------------+----------------+\n");
-
-    printf("\n========================================\n"); 
-    printf("              INVESTIGACAO\n");
-    printf("========================================\n");
-    printf("\nEscolha um comodo para investigar: \n");
-    printf("\n[1]. Sala de Estar");
-    printf("\n[2]. Cozinha");
-    printf("\n[3]. Quarto");
-    printf("\n[4]. Escritorio (Cena do crime)");
-    printf("\n[5]. Jardim");
-    printf("\n[6]. Biblioteca");
-    printf("\nEscolha uma opcao: ");
-    scanf("%d", &comodo);
-
-    switch (comodo){
+int investigar(){
+    switch (historia){
         case 1:
-            printf("\n+-----------------------+\n");
-            printf("|_|    _ _______ _    |_|\n");
-            printf("|   ()|_|_______|_|()   |\n");
-            printf("|    _              _   |\n");
-            printf("|   |_|            |_|  |\n");
-            printf("                        |\n");
-            printf("                         \n");
-            printf("      SALA DE ESTAR      \n");
-            printf("+--------<    >---------+\n");
-        
-            printf("\nVoce investigou a sala.");
-            printf("\nITEM ENCONTRADO: RELOGIO DE PULSO\n");
-            printf("O relogio esta quebrado e pertence a Henrique Oliveira.\n");
-            printf("Os ponteiros estao parados exatamente em 23h32.\n");
-            
-            break;
+            return historia1_investigar();
         case 2:
-            printf("\n|      +-----------------|\n");
-            printf("|         |______________|\n");
-            printf("|__                      |\n");
-            printf("|  |      COZINHA        |\n");
-            printf("|__|       ______        |\n");
-            printf("| |    [] |      | []     \n");
-            printf("| |    [] |______| []     \n");
-            printf("| |                       \n");
-            printf("+------------------------+\n");
-
-            printf("\nVoce investigou a cozinha.");
-            printf("\nITEM ENCONTRADO: TACA QUEBRADA\n");
-            printf("A taca possui uma pequena mancha de sangue.\n");
-
-            printf("\nA taca estava sendo usada por Mariana naquela noite.\n");
-            break;
-        case 3:
-            printf("\n-------------+-----------------+ \n");
-            printf("          |____________________|\n");
-            printf("-+                             |\n");
-            printf("            QUARTO             |\n");
-            printf("           _________           |\n");
-            printf("          |         |          |\n");
-            printf(" +    __  |  _____  |  __      |\n");
-            printf(" |   |  | | |  |  | | |  |     |\n");
-            printf("-+-------------+---------------+\n");
-
-            printf("\nVoce investigou o quarto principal.\n");
-
-            printf("\nITEM ENCONTRADO: DOCUMENTO FINANCEIRO\n");
-
-            printf("O documento mostra varias transferencias realizadas\n");
-            printf("pela empresa de Henrique.\n");
-
-            printf("\nAlgumas movimentacoes chamam sua atencao.\n");
-
-            printf("O nome de Ricardo Mendes aparece relacionado\n");
-            printf("a algumas dessas transacoes.\n");
-
-            printf("\nPISTA:\n");
-            printf("Henrique aparentemente estava investigando\n");
-            printf("alguma irregularidade financeira.\n");
-            
-            break;
-        case 4:
-            printf("\n|-----------------+    \n");
-            printf("|__    ESCRITORIO      \n");
-            printf("|  |                   \n");
-            printf("|  |    ________       \n");
-            printf("|  |   |________|   + \n");
-            printf("|  |      [__]      | \n");
-            printf("+-------------------+-\n");
-            
-            printf("\nVoce investigou o escritorio.");
-            printf("\nITEM ENCONTRADO: BOTAO DE CAMISA\n");
-
-            printf("Um pequeno botao foi encontrado proximo a mesa.\n");
-
-            printf("O botao parece ter sido arrancado durante uma luta.\n");
-
-            printf("\nAo observar os suspeitos, voce percebe que\n");
-            printf("Ricardo possui uma camisa com um botao faltando.\n");
-
-            printf("\nITEM ENCONTRADO: DOCUMENTO RASGADO\n");
-
-            printf("Parte do documento apresenta informacoes sobre\n");
-            printf("transferencias financeiras suspeitas.\n");
-
-            printf("\nPISTA:\n");
-            printf("Henrique provavelmente confrontou alguem\n");
-            printf("sobre essas movimentacoes antes de morrer.\n");
-            break;
-        case 5:
-            printf("\n|------------------]\n");
-            printf("|   JARDIM      _  ]\n");
-            printf("|              (_) ]\n");
-            printf("|     _        _|_ ]\n");
-            printf("|    (_)       \\_/ ]\n");
-            printf("     _|_           ]\n");
-            printf("     \\_/           ]\n");
-            printf("+------<     >-----]\n");
-            printf("\nVoce investigou o jardim.");
-            printf("\nITEM ENCONTRADO: CELULAR\n");
-
-            printf("O celular foi encontrado proximo ao banco do jardim.\n");
-
-            printf("O aparelho possui um registro de chamada.\n");
-
-            printf("\nA chamada comecou as 23h36.\n");
-
-            printf("Ricardo afirmou que estava no jardim fazendo\n");
-            printf("uma ligacao durante boa parte da noite.\n");
-
-            printf("\nPISTA:\n");
-            printf("O relogio encontrado na sala indica 23h32 como\n");
-            printf("o horario aproximado do ataque.\n");
-
-            printf("A ligacao de Ricardo comecou somente as 23h36.\n");
-
-            printf("\nExiste uma contradicao no depoimento.\n");
-            break;
-        case 6:    
-            printf("\n+-----------------------+\n");
-            printf("|__|_|_|_|_|_|_|_|_|_|_||\n");
-            printf("|__|                    |\n");
-            printf("|__|    BIBLIOTECA      |\n");
-            printf("|__|                    |\n");
-            printf("|__|     __     __      |\n");
-            printf("|__|    [__]   [__]      \n");
-            printf("|__|                     \n");
-            printf("          _______       +\n");
-            printf("         [_______]      |\n");
-            printf("+-----------------------+\n"); 
-            
-            printf("\nVoce investigou a biblioteca.");
-            printf("\nITEM ENCONTRADO: ANOTACAO DE HENRIQUE\n");
-
-            printf("Entre varios documentos, voce encontra uma\n");
-            printf("anotacao escrita pela propria vitima.\n");
-
-            printf("\nA anotacao diz:\n");
-            printf("\"Investigar novamente as transferencias realizadas por R.M.\"\n");
-
-            printf("\nPISTA:\n");
-            printf("As iniciais R.M. correspondem a Ricardo Mendes.\n");
-
-            printf("Henrique estava investigando Ricardo antes de morrer.\n");
-            break;
+            return historia2_investigar();
         default:
-            printf("\nComodo invalido!");    
-            break;
+            return historia3_investigar();
     }
-    getchar();
-    printf("\n\nPressione Enter para continuar...");
-    getchar();
 }
 
 void acusacao (){
