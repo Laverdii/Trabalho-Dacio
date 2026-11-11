@@ -118,46 +118,63 @@ flowchart TD
 ---
 
 ## 4. Estrutura de Dados
-Estruturas de dados planejadas: as estruturas abaixo representam a organização dos dados prevista para as próximas etapas do desenvolvimento. Sua implementação ocorrerá conforme os conteúdos necessários forem apresentados na disciplina.
 
-O sistema utilizará estruturas heterogêneas (struct) para organizar as principais informações utilizadas durante a investigação. As estruturas previstas são:
+Na versão atual, o sistema não utiliza estruturas heterogêneas (`struct`). Os dados são
+organizados com variáveis simples, constantes e um vetor de strings (matriz de caracteres),
+de acordo com os conteúdos vistos até o momento na disciplina.
+
+### 4.1 Variáveis globais (controle da investigação)
+
+| Variável | Tipo | Arquivo | Função |
+|---|---|---|---|
+| `historia` | `int` | `main.c` | Caso escolhido pelo jogador (1, 2 ou 3) |
+| `turnos` | `int` | `main.c` | Turnos restantes: 12 (Fácil), 8 (Médio) ou 5 (Difícil) |
+| `inventario` | `char[10][40]` | `inventario.h` | Nomes dos itens/pistas encontrados |
+| `total_itens` | `int` | `inventario.h` | Quantidade de itens no inventário (também conta como número de provas) |
 
 ```c
-// Estrutura para armazenamento dos casos
-typedef struct {
-    char titulo[80];
-    char historia[500];
-    int culpado;
-    char resolucao[500];
-} Caso;
+#define MAX_ITENS 10
 
-// Estrutura para armazenamento dos personagens
-typedef struct {
-    char nome[40];
-    char papel[40];
-    char fala[500];
-    int suspeito;
-} Personagem;
+int historia;                      // caso escolhido (1, 2 ou 3)
+int turnos;                        // turnos restantes
 
-// Estrutura para armazenamento das pistas
-typedef struct {
-    char descricao[500];
-    char item[60];
-    int encontrada;
-} Pista;
+char inventario[MAX_ITENS][40];    // cada linha guarda o nome de um item
+int total_itens = 0;               // quantos itens foram coletados
+```
 
-// Estrutura para armazenamento dos cômodos
-typedef struct {
-    char nome[40];
-    char descricao[200];
-    Pista pistas[3];
-    int explorado;
-} Comodo;
+### 4.2 Variáveis locais
 
-// Estrutura para controle da investigação
-typedef struct {
-    Caso caso;
-    int dificuldade;
-    int turnos_restantes;
-    int caso_resolvido;
-} Investigacao;
+- `char nome[30]`: nome do detetive, lido em `iniciar_jogo()`.
+- `int opcao`, `pessoa`, `comodo`, `local`, `suspeito`: guardam a opção digitada em cada menu
+  e são usadas no `switch` correspondente.
+
+### 4.3 Organização dos casos
+
+Os dados de cada caso (história, personagens, cômodos, pistas e culpado) ficam na biblioteca
+`historias.h`, separados em quatro funções por caso:
+
+| Função | Responsabilidade |
+|---|---|
+| `historiaX_introducao()` | Exibe o contexto e a lista de suspeitos |
+| `historiaX_investigar()` | Exibe os cômodos; cada `case` mostra a pista e chama `adicionar_item()` |
+| `historiaX_conversar()` | Exibe o depoimento de cada suspeito |
+| `historiaX_acusacao()` | Verifica o suspeito escolhido e se há provas suficientes |
+
+As funções `investigar()` e `conversar()` retornam `1` quando a ação gasta um turno e `0`
+quando a opção é inválida, e esse valor é subtraído de `turnos`.
+
+### 4.4 Inventário (`inventario.h`)
+
+| Função | O que faz |
+|---|---|
+| `limpar_inventario()` | Zera `total_itens` ao iniciar um novo caso |
+| `adicionar_item(item)` | Copia o item para a matriz com `strcpy`, evitando repetidos com `strcmp` |
+| `mostrar_inventario()` | Percorre a matriz com `for` e exibe os itens coletados |
+
+Para resolver o caso, além de acusar o culpado certo, o jogador precisa de um número mínimo de
+itens no inventário: 4 no Caso 1 e 3 nos Casos 2 e 3.
+
+### 4.5 Evolução planejada
+
+Quando o conteúdo de estruturas heterogêneas for apresentado na disciplina, os dados acima
+poderão ser agrupados em `struct`, como `Caso`, `Personagem`, `Pista`, `Comodo` e `Investigacao`.
