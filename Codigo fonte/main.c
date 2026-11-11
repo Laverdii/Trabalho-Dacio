@@ -10,8 +10,8 @@ void menu_principal();
 int escolher_historia();
 int escolher_dificuldade();
 void iniciar_jogo();
-void investigar();
-void conversar();
+int investigar();
+int conversar();
 void acusacao();
 void sair();
 
