@@ -3,17 +3,16 @@
 #include "inventario.h"   // inventario do detetive
 #include "historias.h"    // historias do detetive
 
-int historia;   // qual caso esta sendo jogado (1, 2 ou 3)
-int turnos;     // quantos turnos ainda restam
-
 void menu_principal();
 int escolher_historia();
 int escolher_dificuldade();
 void iniciar_jogo();
-int investigar();
-int conversar();
-void acusacao();
+int investigar(int historia);
+int conversar(int historia);
+void acusacao(int historia);
 void sair();
+
+
 
 void menu_principal(){
     int opcao;
@@ -63,6 +62,7 @@ int escolher_historia(){
         printf("[3]. Caso 03 - O Envenenamento no Trem Noturno\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
+        fflush(stdin);
 
         if (opcao < 1 || opcao > 3){
             printf("\nOpcao invalida!\n");
@@ -85,6 +85,7 @@ int escolher_dificuldade(){
         printf("[3]. Dificil -  5 turnos\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
+        fflush(stdin);
 
         if (opcao < 1 || opcao > 3){
             printf("\nOpcao invalida!\n");
@@ -103,7 +104,7 @@ int escolher_dificuldade(){
 
 void iniciar_jogo(){
     char nome[30];
-    int opcao;
+    int opcao, historia, turnos;
 
     system("cls");
 
@@ -156,17 +157,17 @@ void iniciar_jogo(){
 
         switch (opcao){
             case 1:
-                turnos = turnos - investigar();
+                turnos = turnos - investigar(historia);
                 break;
             case 2:
-                turnos = turnos - conversar();
+                turnos = turnos - conversar(historia);
                 break;
             case 3:
                 mostrar_inventario();
                 pausar();
                 break;
             case 4:
-                acusacao();
+                acusacao(historia);
                 return;
             case 5:
                 sair();
@@ -189,10 +190,10 @@ void iniciar_jogo(){
     mostrar_inventario();
     printf("\n\nPressione Enter para continuar...");
     getchar();
-    acusacao();
+    acusacao(historia);
 }
 
-int investigar(){
+int investigar(int historia){
     switch (historia){
         case 1:
             return historia1_investigar();
@@ -203,7 +204,7 @@ int investigar(){
     }
 }
 
-int conversar(){
+int conversar(int historia){
     switch (historia){
         case 1:
             return historia1_conversar();
@@ -213,7 +214,7 @@ int conversar(){
             return historia3_conversar();
     }
 }
-void acusacao(){
+void acusacao(int historia){
     switch (historia){
         case 1:
             historia1_acusacao();
