@@ -113,7 +113,7 @@ int historia1_conversar(){
 
     switch (pessoa) {
         case 1:
-            printf("\nVoce iniciou uma conversa com Carlos Oliveira.");
+            printf("\nVoce iniciou uma conversa com Carlos Oliveira.\n");
             printf("Carlos parece nervoso durante o interrogatorio.\n\n");
             printf("\nCarlos Oliverira: ");
 
@@ -122,7 +122,7 @@ int historia1_conversar(){
             printf("Eu e Henrique tinhamos problemas financeiros,\nmas eu jamais faria algo assim.\n");
             break;
         case 2:
-            printf("\nVoce iniciou uma conversa com Mariana Oliveira.");
+            printf("\nVoce iniciou uma conversa com Mariana Oliveira.\n");
             printf("Mariana demonstra preocupacao durante a conversa.\n\n");
             printf("\nMariana Oliveira: ");
 
@@ -131,7 +131,7 @@ int historia1_conversar(){
             printf("Henrique e eu tivemos problemas recentemente,\nmas eu nao queria que ele morresse.\n");
             break;
         case 3:
-            printf("\nVoce iniciou uma conversa com Ricardo Mendes.");
+            printf("\nVoce iniciou uma conversa com Ricardo Mendes.\n");
             printf("Ricardo tenta manter a calma durante o interrogatorio.\n\n");
             printf("\nRicardo Mendes: ");
 
@@ -140,7 +140,7 @@ int historia1_conversar(){
             printf("Nao entrei no escritorio e nao vi Henrique depois\nque ele foi para la.\n");
             break;
         case 4:
-            printf("\nVoce iniciou uma conversa com Ana Souza.");
+            printf("\nVoce iniciou uma conversa com Ana Souza.\n");
             printf("Ana parece bastante nervosa.\n\n");
             printf("\nAna Souza: ");
 
