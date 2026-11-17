@@ -8,7 +8,36 @@ O foco principal é proporcionar uma experiência de investigação baseada na t
 
 ---
 
-## 2. Fluxo de Utilização do Sistema
+## 2. Como Jogar
+
+**Objetivo:** descobrir quem é o culpado do caso e reunir provas suficientes para acusá-lo antes que os turnos acabem.
+
+1. Digite o nome do seu detetive.
+2. Escolha um dos três casos:
+   - **Caso 01** – O Assassinato da Mansão Oliveira
+   - **Caso 02** – O Roubo do Museu Municipal
+   - **Caso 03** – O Envenenamento no Trem Noturno
+3. Escolha a dificuldade, que define quantos turnos você terá: **Fácil (12)**, **Médio (8)** ou **Difícil (5)**.
+4. Leia a introdução com atenção: ela apresenta a história e os suspeitos.
+5. Use seus turnos para investigar:
+   - **Explorar os locais** – encontra pistas que vão para o inventário (gasta 1 turno).
+   - **Interrogar um suspeito** – ouve o depoimento dele (gasta 1 turno).
+   - **Ver inventário** – revisa as provas coletadas (não gasta turno).
+6. Quando tiver certeza, faça a **acusação**.
+
+### Como vencer
+
+Para resolver o caso, você precisa:
+- acusar o **suspeito correto**; **e**
+- ter o **número mínimo de provas** no inventário (4 no Caso 1; 3 nos Casos 2 e 3).
+
+Acertar o culpado sem provas suficientes faz o suspeito ser liberado. Se os turnos acabarem, você será obrigado a acusar com o que tiver.
+
+> 💡 **Dica:** compare os horários e os depoimentos. Nem todo suspeito diz a verdade.
+
+---
+
+## 3. Fluxo de Utilização do Sistema
 
 1. Ao iniciar o programa, o usuário visualiza o menu principal com as opções:
    - `1. Jogar`
@@ -40,13 +69,13 @@ O foco principal é proporcionar uma experiência de investigação baseada na t
 11. Quando os turnos chegam a zero, o sistema exibe a mensagem **"O TEMPO ACABOU!"**, mostra o inventário e obriga o jogador a fazer a acusação com as provas que possui.
 12. Entradas inválidas são tratadas da seguinte forma:
     - na escolha de caso e de dificuldade, o sistema exibe "Opção inválida!" e repete a pergunta;
-    - nos menus de cômodos e de suspeitos, exibe "Opção inválida!" e retorna ao menu do caso **sem gastar turno**;
+    - nos menus de cômodos e de suspeitos, exibe "Cômodo inválido!" ou "Opção inválida!" e retorna ao menu do caso **sem gastar turno**;
     - no menu do caso, exibe "Opção inválida!" e reexibe o menu;
     - no menu principal, exibe "Opção inválida!" e reexibe o menu.
 
 ---
 
-## 3. Fluxograma da Lógica do Sistema
+## 4. Fluxograma da Lógica do Sistema
 ```mermaid
 flowchart TD
     n1((INÍCIO))
@@ -114,9 +143,10 @@ flowchart TD
     n19 -->|Sim| n20 --> nFim
     n19 -->|Não| n21 --> nFim
 ```
+
 ---
 
-## Como compilar e executar
+## 5. Como Compilar e Executar
 
 O jogo foi feito para o terminal do **Windows** (usa `system("cls")` para limpar a tela).
 
@@ -128,38 +158,37 @@ jogo.exe
 
 ---
 
-## 4. Estrutura de Dados
+## 6. Estrutura de Dados
 
 O sistema não utiliza estruturas heterogêneas (`struct`). Os dados são
 organizados com variáveis simples, constantes e um vetor de strings (matriz de caracteres),
 de acordo com os conteúdos vistos até o momento na disciplina.
 
-### 4.1 Variáveis globais (controle da investigação)
+### 6.1 Variáveis principais (controle da investigação)
 
 | Variável | Tipo | Arquivo | Função |
 |---|---|---|---|
-| `historia` | `int` | `main.c` | Caso escolhido pelo jogador (1, 2 ou 3) |
-| `turnos` | `int` | `main.c` | Turnos restantes: 12 (Fácil), 8 (Médio) ou 5 (Difícil) |
-| `inventario` | `char[10][40]` | `inventario.h` | Nomes dos itens/pistas encontrados |
-| `total_itens` | `int` | `inventario.h` | Quantidade de itens no inventário (também conta como número de provas) |
+| `historia` | `int` (local de `iniciar_jogo()`) | `main.c` | Caso escolhido pelo jogador (1, 2 ou 3) |
+| `turnos` | `int` (local de `iniciar_jogo()`) | `main.c` | Turnos restantes: 12 (Fácil), 8 (Médio) ou 5 (Difícil) |
+| `inventario` | `char[10][40]` (global) | `inventario.h` | Nomes dos itens/pistas encontrados |
+| `total_itens` | `int` (global) | `inventario.h` | Quantidade de itens no inventário (também conta como número de provas) |
 
 ```c
 #define MAX_ITENS 10
 
-int historia;                      // caso escolhido (1, 2 ou 3)
-int turnos;                        // turnos restantes
-
+// inventario.h (globais)
 char inventario[MAX_ITENS][40];    // cada linha guarda o nome de um item
 int total_itens = 0;               // quantos itens foram coletados
 ```
 
-### 4.2 Variáveis locais
+### 6.2 Variáveis locais
 
+- `int historia`, `int turnos`: caso escolhido e turnos restantes, declarados em `iniciar_jogo()`.
 - `char nome[30]`: nome do detetive, lido em `iniciar_jogo()`.
 - `int opcao`, `pessoa`, `comodo`, `local`, `suspeito`: guardam a opção digitada em cada menu
   e são usadas no `switch` correspondente.
 
-### 4.3 Organização dos casos
+### 6.3 Organização dos casos
 
 Os dados de cada caso (história, personagens, cômodos, pistas e culpado) ficam na biblioteca
 `historias.h`, separados em quatro funções por caso:
@@ -174,7 +203,7 @@ Os dados de cada caso (história, personagens, cômodos, pistas e culpado) ficam
 As funções `investigar()` e `conversar()` retornam `1` quando a ação gasta um turno e `0`
 quando a opção é inválida, e esse valor é subtraído de `turnos`.
 
-### 4.4 Inventário (`inventario.h`)
+### 6.4 Inventário (`inventario.h`)
 
 | Função | O que faz |
 |---|---|
@@ -184,8 +213,3 @@ quando a opção é inválida, e esse valor é subtraído de `turnos`.
 
 Para resolver o caso, além de acusar o culpado certo, o jogador precisa de um número mínimo de
 itens no inventário: 4 no Caso 1 e 3 nos Casos 2 e 3.
-
-### 4.5 Evolução planejada
-
-Quando o conteúdo de estruturas heterogêneas for apresentado na disciplina, os dados acima
-poderão ser agrupados em `struct`, como `Caso`, `Personagem`, `Pista`, `Comodo` e `Investigacao`.
