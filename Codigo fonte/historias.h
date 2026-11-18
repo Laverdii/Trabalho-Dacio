@@ -13,8 +13,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void pausar(){
-    getchar();
+
+
+void pausar(){ 
     printf("\n\nPressione Enter para continuar...");
     getchar();
 }
